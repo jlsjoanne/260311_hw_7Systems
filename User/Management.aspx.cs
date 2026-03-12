@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.Configuration;
+using System.Data.SqlClient;
 
 namespace _260311_hw_7Systems.User
 {
@@ -28,39 +29,10 @@ namespace _260311_hw_7Systems.User
 
             if (!IsPostBack)
             {
-                GridView1.DataSource = BindGridView();
-                GridView1.DataBind();
+                
             }
             
         }
-
-        private SqlDataSource BindGridView()
-        {
-            SqlDataSource sqlDataSource1 = new SqlDataSource();
-            sqlDataSource1.ID = "SqlDataSource1";
-
-            string connectionString = WebConfigurationManager.ConnectionStrings["UserDB"].ConnectionString;
-            sqlDataSource1.ConnectionString = connectionString;
-
-            string selectCommand = "SELECT * FROM UserList";
-            sqlDataSource1.SelectCommand = selectCommand;
-
-            string deleteCommand = "DELECT * FROM UserList WHERE UserName = @UserName";
-            sqlDataSource1.DeleteCommand = deleteCommand;
-
-            string updateCommand = "UPDATE UserList SET PassWord = @PassWord, RoleId= @RoleId WHERE UserName = @UserName";
-            sqlDataSource1.UpdateCommand = updateCommand;
-
-            return sqlDataSource1;
-
-            
-        }
-
-        protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e) { }
-        //gmail草稿
-
-
-
 
 
     }

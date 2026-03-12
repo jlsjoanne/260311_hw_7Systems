@@ -11,6 +11,9 @@
         <div>
             <asp:LinkButton ID="Management" runat="server" Visible="False" OnClick="Management_Click">會員管理</asp:LinkButton>
         </div>
-        
+        <br />
+        <div>
+            <asp:LinkButton ID="LogOut" runat="server" OnClick="LogOut_Click">登出</asp:LinkButton>
+        </div>
     </main>
 </asp:Content>

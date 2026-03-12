@@ -21,6 +21,7 @@ namespace _260311_hw_7Systems.User
             {
                 UserName.Visible = false;
                 RoleName.Text = "尚未登入";
+                LogOut.Visible = false;
             }
             
             if (Session["RoleId"] != null && Session["RoleId"].ToString() == "1")
@@ -32,6 +33,15 @@ namespace _260311_hw_7Systems.User
         protected void Management_Click(object sender, EventArgs e)
         {
             Response.Redirect("Management.aspx");
+        }
+
+        protected void LogOut_Click(object sender, EventArgs e)
+        {
+            Session["LogInStatus"] = null;
+            Session["UserName"] = null;
+            Session["RoleId"] = null;
+            Session["RoleName"] = null;
+            Response.Redirect("../Default.aspx");
         }
     }
 }
