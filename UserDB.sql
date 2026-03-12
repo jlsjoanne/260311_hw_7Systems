@@ -1,0 +1,25 @@
+﻿CREATE TABLE Role(
+	RoleId INT IDENTITY(1,1) PRIMARY KEY,
+	RoleName VARCHAR(20) NOT NULL
+);
+
+INSERT INTO Role(RoleName)
+VALUES
+('Admin'),
+('Edit'),
+('View');
+
+CREATE TABLE UserList(
+	UserName VARCHAR(50) PRIMARY KEY,
+	PassWord VARCHAR(50) NOT NULL,
+	RoleId INT FOREIGN KEY REFERENCES Role(RoleId)
+);
+
+ALTER TABLE UserList
+ALTER COLUMN PassWord ADD MASKED WITH (FUNCTION= 'default()');
+
+
+
+INSERT INTO UserList(UserName, PassWord, RoleId)
+VALUES
+('JoanneH','0830831',1);
