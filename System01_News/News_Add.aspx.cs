@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.IO;
 
 namespace _260311_hw_7Systems.System01_News
 {
@@ -14,11 +15,11 @@ namespace _260311_hw_7Systems.System01_News
 
         }
 
-        static int idx = 0;
+        static int linkIdx = 0;
         protected void AddLink_Click(object sender, EventArgs e)
         {
-            idx++;
-            for(int j=0; j < idx; j++)
+            linkIdx++;
+            for(int j=0; j < linkIdx; j++)
             {
                 Label Lname = new Label();
                 Label LUrl = new Label();
@@ -47,5 +48,7 @@ namespace _260311_hw_7Systems.System01_News
                 PrLink.Controls.Add(new LiteralControl("<br /><br />"));
             }
         }
+
+        
     }
 }

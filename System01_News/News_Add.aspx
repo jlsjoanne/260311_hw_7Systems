@@ -8,8 +8,15 @@
             <h3>標題</h3>
             <p>(字數限制: 50字)</p>
             <asp:TextBox ID="NewTitle" runat="server" Width="100%"></asp:TextBox>
-            <br />
-            <br />
+        </div>
+        <br />
+        <div>
+            <h4>分類</h4>
+            <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource2" DataTextField="CategoryName" DataValueField="CategoryName"></asp:DropDownList>
+            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:NewsDB %>" SelectCommand="SELECT [CategoryName] FROM [Category]"></asp:SqlDataSource>
+        </div>
+        <br />
+        <div>
             <h4>內文</h4>
             <p>(字數限制: 1000字)</p>
             <asp:TextBox ID="Content" runat="server"
@@ -17,7 +24,7 @@
         </div>
         <br />
         <div>
-            <h4>上傳圖片 (可上傳多圖)</h4>
+            <h4>上傳圖片</h4>
             <asp:FileUpload ID="ImageUpload1" runat="server" AllowMultiple="True"/>
             <asp:Button ID="ImageUploadBtn" runat="server" Text="上傳" />
             <br />
