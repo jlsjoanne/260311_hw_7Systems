@@ -48,6 +48,7 @@
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/">Home</a></li>
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/User/Setting">帳號資訊</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/System01_News/News_List">最新消息</a></li>
                     </ul>
                 </div>
             </div>

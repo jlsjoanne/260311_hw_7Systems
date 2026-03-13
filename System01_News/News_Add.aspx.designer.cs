@@ -51,58 +51,76 @@ namespace _260311_hw_7Systems.System01_News
         protected global::System.Web.UI.WebControls.TextBox Content;
 
         /// <summary>
-        /// ImageUpload1 control.
+        /// AddImg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload ImageUpload1;
+        protected global::System.Web.UI.WebControls.Button AddImg;
 
         /// <summary>
-        /// ImageUploadBtn control.
+        /// PhImg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ImageUploadBtn;
+        protected global::System.Web.UI.WebControls.PlaceHolder PhImg;
 
         /// <summary>
-        /// ImgUploadStatus control.
+        /// ImgUpload control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ImgUploadStatus;
+        protected global::System.Web.UI.WebControls.Button ImgUpload;
 
         /// <summary>
-        /// FileUpload1 control.
+        /// IsImgSuccess control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
+        protected global::System.Web.UI.WebControls.Label IsImgSuccess;
 
         /// <summary>
-        /// FileUploadBtn control.
+        /// AddFile control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button FileUploadBtn;
+        protected global::System.Web.UI.WebControls.Button AddFile;
 
         /// <summary>
-        /// FileUploadStatus control.
+        /// PhFile control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label FileUploadStatus;
+        protected global::System.Web.UI.WebControls.PlaceHolder PhFile;
+
+        /// <summary>
+        /// FileUpload control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button FileUpload;
+
+        /// <summary>
+        /// IsFileSuccess control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label IsFileSuccess;
 
         /// <summary>
         /// AddLink control.

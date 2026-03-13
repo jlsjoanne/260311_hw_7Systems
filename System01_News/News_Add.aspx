@@ -24,24 +24,29 @@
         </div>
         <br />
         <div>
-            <h4>上傳圖片</h4>
-            <asp:FileUpload ID="ImageUpload1" runat="server" AllowMultiple="True"/>
-            <asp:Button ID="ImageUploadBtn" runat="server" Text="上傳" />
+            <h4>圖片</h4>
+            <asp:Button ID="AddImg" runat="server" Text="新增圖片"/>
             <br />
-            <asp:Label ID="ImgUploadStatus" runat="server"></asp:Label>
+            <asp:PlaceHolder ID="PhImg" runat="server"></asp:PlaceHolder>     
+            <br />
+            <asp:Button ID="ImgUpload" runat="server" Text="上傳" Visible="false" />
+            <asp:Label ID="IsImgSuccess" runat="server"></asp:Label>
         </div>
         <br />
         <div>
-            <h4>上傳檔案 (可上傳多檔)</h4>
-            <asp:FileUpload ID="FileUpload1" runat="server" AllowMultiple="True" />
-            <asp:Button ID="FileUploadBtn" runat="server" Text="上傳" />
+            <h4>檔案</h4>
+            <asp:Button ID="AddFile" runat="server" Text="新增檔案" />
             <br />
-            <asp:Label ID="FileUploadStatus" runat="server"></asp:Label>
+            <asp:PlaceHolder ID="PhFile" runat="server"></asp:PlaceHolder>
+            <br />
+            <asp:Button ID="FileUpload" runat="server" Text="上傳" Visible="false"/>
+            <asp:Label ID="IsFileSuccess" runat="server"></asp:Label>
+
         </div>
         <br />
         <div>
-            <h4>新增連結</h4>
-            <asp:Button ID="AddLink" runat="server" Text="新增" OnClick="AddLink_Click" />
+            <h4>連結</h4>
+            <asp:Button ID="AddLink" runat="server" Text="新增連結"/>
             <br />
             <asp:PlaceHolder ID="PrLink" runat="server"></asp:PlaceHolder>
         </div>

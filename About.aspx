@@ -5,6 +5,5 @@
         <h2 id="title"><%: Title %>.</h2>
         <h3>Your application description page.</h3>
         <p>Use this area to provide additional information.</p>
-        <asp:CheckBox ID="CheckBox1" runat="server" Text="Is"  />
     </main>
 </asp:Content>

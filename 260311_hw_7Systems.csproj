@@ -186,6 +186,8 @@
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
     <Content Include="System01_News\News_Add.aspx" />
+    <Content Include="System01_News\News_Edit.aspx" />
+    <Content Include="System01_News\News_List.aspx" />
     <Content Include="User\LogIn.aspx" />
     <Content Include="User\Management.aspx" />
     <Content Include="User\Setting.aspx" />
@@ -222,6 +224,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\IFile.cs" />
+    <Compile Include="Interfaces\ILink.cs" />
+    <Compile Include="Models\newsFile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -243,6 +248,20 @@
     </Compile>
     <Compile Include="System01_News\News_Add.aspx.designer.cs">
       <DependentUpon>News_Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="System01_News\News_Edit.aspx.cs">
+      <DependentUpon>News_Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="System01_News\News_Edit.aspx.designer.cs">
+      <DependentUpon>News_Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="System01_News\News_List.aspx.cs">
+      <DependentUpon>News_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="System01_News\News_List.aspx.designer.cs">
+      <DependentUpon>News_List.aspx</DependentUpon>
     </Compile>
     <Compile Include="User\LogIn.aspx.cs">
       <DependentUpon>LogIn.aspx</DependentUpon>
