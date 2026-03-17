@@ -306,7 +306,7 @@
   <ItemGroup>
     <Folder Include="Files\" />
     <Folder Include="Images\" />
-    <Folder Include="System_06_Forums\" />
+    <Folder Include="System06_Forums\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
