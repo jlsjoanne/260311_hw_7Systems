@@ -100,6 +100,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="App_Data\Forum.mdf" />
+    <Content Include="App_Data\Forum_log.ldf">
+      <DependentUpon>Forum.mdf</DependentUpon>
+    </Content>
     <Content Include="App_Data\News.mdf" />
     <Content Include="App_Data\News_log.ldf">
       <DependentUpon>News.mdf</DependentUpon>
@@ -302,6 +306,7 @@
   <ItemGroup>
     <Folder Include="Files\" />
     <Folder Include="Images\" />
+    <Folder Include="System_06_Forums\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
