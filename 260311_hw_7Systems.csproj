@@ -100,6 +100,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="App_Data\Forum.mdf" />
+    <Content Include="App_Data\Forum_log.ldf">
+      <DependentUpon>Forum.mdf</DependentUpon>
+    </Content>
     <Content Include="App_Data\News.mdf" />
     <Content Include="App_Data\News_log.ldf">
       <DependentUpon>News.mdf</DependentUpon>
@@ -188,6 +192,14 @@
     <Content Include="System01_News\News_Add.aspx" />
     <Content Include="System01_News\News_Edit.aspx" />
     <Content Include="System01_News\News_List.aspx" />
+    <Content Include="System06_Forums\Article.aspx" />
+    <Content Include="System06_Forums\ArticleList.aspx" />
+    <Content Include="System06_Forums\Article_Add.aspx" />
+    <Content Include="System06_Forums\Article_byUser.aspx" />
+    <Content Include="System06_Forums\Article_Edit.aspx" />
+    <Content Include="System06_Forums\CategoryList.aspx" />
+    <Content Include="System06_Forums\Category_Add.aspx" />
+    <Content Include="System06_Forums\Comment_Add.aspx" />
     <Content Include="User\LogIn.aspx" />
     <Content Include="User\Management.aspx" />
     <Content Include="User\Setting.aspx" />
@@ -262,6 +274,62 @@
     </Compile>
     <Compile Include="System01_News\News_List.aspx.designer.cs">
       <DependentUpon>News_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="System06_Forums\Article.aspx.cs">
+      <DependentUpon>Article.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="System06_Forums\Article.aspx.designer.cs">
+      <DependentUpon>Article.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="System06_Forums\ArticleList.aspx.cs">
+      <DependentUpon>ArticleList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="System06_Forums\ArticleList.aspx.designer.cs">
+      <DependentUpon>ArticleList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="System06_Forums\Article_Add.aspx.cs">
+      <DependentUpon>Article_Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="System06_Forums\Article_Add.aspx.designer.cs">
+      <DependentUpon>Article_Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="System06_Forums\Article_byUser.aspx.cs">
+      <DependentUpon>Article_byUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="System06_Forums\Article_byUser.aspx.designer.cs">
+      <DependentUpon>Article_byUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="System06_Forums\Article_Edit.aspx.cs">
+      <DependentUpon>Article_Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="System06_Forums\Article_Edit.aspx.designer.cs">
+      <DependentUpon>Article_Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="System06_Forums\CategoryList.aspx.cs">
+      <DependentUpon>CategoryList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="System06_Forums\CategoryList.aspx.designer.cs">
+      <DependentUpon>CategoryList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="System06_Forums\Category_Add.aspx.cs">
+      <DependentUpon>Category_Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="System06_Forums\Category_Add.aspx.designer.cs">
+      <DependentUpon>Category_Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="System06_Forums\Comment_Add.aspx.cs">
+      <DependentUpon>Comment_Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="System06_Forums\Comment_Add.aspx.designer.cs">
+      <DependentUpon>Comment_Add.aspx</DependentUpon>
     </Compile>
     <Compile Include="User\LogIn.aspx.cs">
       <DependentUpon>LogIn.aspx</DependentUpon>
