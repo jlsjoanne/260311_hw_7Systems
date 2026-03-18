@@ -12,8 +12,8 @@
         <br />
         <div>
             <h4>分類</h4>
-            <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource2" DataTextField="CategoryName" DataValueField="CategoryName"></asp:DropDownList>
-            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:NewsDB %>" SelectCommand="SELECT [CategoryName] FROM [Category]"></asp:SqlDataSource>
+            <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource2" DataTextField="CategoryName" DataValueField="CategoryId"></asp:DropDownList>
+            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:NewsDB %>" SelectCommand="SELECT * FROM [Category]"></asp:SqlDataSource>
         </div>
         <br />
         <div>
@@ -25,34 +25,28 @@
         <br />
         <div>
             <h4>圖片</h4>
-            <asp:Button ID="AddImg" runat="server" Text="新增圖片"/>
-            <br />
-            <asp:PlaceHolder ID="PhImg" runat="server"></asp:PlaceHolder>     
-            <br />
-            <asp:Button ID="ImgUpload" runat="server" Text="上傳" Visible="false" />
-            <asp:Label ID="IsImgSuccess" runat="server"></asp:Label>
+            <p>(可上傳多檔)</p>
+            <asp:FileUpload ID="ImagesUpload" runat="server" 
+                AllowMultiple="true" accept="image/*"/>
         </div>
         <br />
         <div>
             <h4>檔案</h4>
-            <asp:Button ID="AddFile" runat="server" Text="新增檔案" />
-            <br />
-            <asp:PlaceHolder ID="PhFile" runat="server"></asp:PlaceHolder>
-            <br />
-            <asp:Button ID="FileUpload" runat="server" Text="上傳" Visible="false"/>
-            <asp:Label ID="IsFileSuccess" runat="server"></asp:Label>
-
+            <p>(可上傳多檔)</p>
+            <asp:FileUpload ID="FilesUpload" runat="server"
+                AllowMiltiple="true"/>
         </div>
         <br />
         <div>
             <h4>連結</h4>
-            <asp:Button ID="AddLink" runat="server" Text="新增連結"/>
+            <asp:Button ID="AddLink" runat="server" Text="新增連結" OnClick="AddLink_Click"/>
             <br />
-            <asp:PlaceHolder ID="PrLink" runat="server"></asp:PlaceHolder>
+            <asp:PlaceHolder ID="PhLink" runat="server"></asp:PlaceHolder>
         </div>
         <br />
         <div>
             <asp:Button ID="Submit" runat="server" Text="送出" />
         </div>
+        
     </main>
 </asp:Content>

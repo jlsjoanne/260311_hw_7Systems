@@ -51,76 +51,22 @@ namespace _260311_hw_7Systems.System01_News
         protected global::System.Web.UI.WebControls.TextBox Content;
 
         /// <summary>
-        /// AddImg control.
+        /// ImagesUpload control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button AddImg;
+        protected global::System.Web.UI.WebControls.FileUpload ImagesUpload;
 
         /// <summary>
-        /// PhImg control.
+        /// FilesUpload control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder PhImg;
-
-        /// <summary>
-        /// ImgUpload control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ImgUpload;
-
-        /// <summary>
-        /// IsImgSuccess control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label IsImgSuccess;
-
-        /// <summary>
-        /// AddFile control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button AddFile;
-
-        /// <summary>
-        /// PhFile control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder PhFile;
-
-        /// <summary>
-        /// FileUpload control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button FileUpload;
-
-        /// <summary>
-        /// IsFileSuccess control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label IsFileSuccess;
+        protected global::System.Web.UI.WebControls.FileUpload FilesUpload;
 
         /// <summary>
         /// AddLink control.
@@ -132,13 +78,13 @@ namespace _260311_hw_7Systems.System01_News
         protected global::System.Web.UI.WebControls.Button AddLink;
 
         /// <summary>
-        /// PrLink control.
+        /// PhLink control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder PrLink;
+        protected global::System.Web.UI.WebControls.PlaceHolder PhLink;
 
         /// <summary>
         /// Submit control.
