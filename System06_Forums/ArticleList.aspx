@@ -3,7 +3,7 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <main>
         <div>
-            <asp:LinkButton ID="MyArticle" runat="server" Visible="False">我的文章</asp:LinkButton>
+            <asp:LinkButton ID="MyArticle" runat="server" Visible="False" OnClick="MyArticle_Click">我的文章</asp:LinkButton>
         </div>
         <br />
         <h2>文章列表</h2>
@@ -12,8 +12,10 @@
         </div>
         <br />
         <div>
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False">
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False"
+                OnRowDeleting="GridView1_RowDeleting">
                 <Columns>
+                    <asp:CommandField ShowDeleteButton="False"/>
                     <asp:HyperLinkField DataNavigateUrlFields="ArticleID" DataNavigateUrlFormatString="Article.aspx?ArticleID={0}" DataTextField="Title" HeaderText="標題" />
                     <asp:BoundField DataField="PostTime" HeaderText="發表時間" />
                 </Columns>

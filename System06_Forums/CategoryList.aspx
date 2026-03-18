@@ -8,10 +8,9 @@
         </div>
         <br />
         <div>
-            <asp:GridView ID="GridView1" runat="server" DataSourceID="ForumCategory" DataKeyNames="CategoryID" AutoGenerateColumns="False">
+            <asp:GridView ID="GridView1" runat="server" DataSourceID="ForumCategory" DataKeyNames="CategoryID" AutoGenerateColumns="False" Width ="200px">
                 <Columns>
                     <asp:CommandField ShowDeleteButton="False" ShowEditButton="False" />
-                    <asp:BoundField DataField="CategoryID" HeaderText="分類編號" />
                     <asp:HyperLinkField DataNavigateUrlFields="CategoryID" DataNavigateUrlFormatString="ArticleList.aspx?CategoryID={0}" DataTextField="CategoryName" HeaderText="分類名稱" />
                 </Columns>
             </asp:GridView>

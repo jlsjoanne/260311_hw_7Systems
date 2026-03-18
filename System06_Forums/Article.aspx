@@ -18,8 +18,12 @@
             <asp:Button ID="AddComment" runat="server" Text="新增留言" OnClick="AddComment_Click" Visible="False"/>
             <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False">
                 <Columns>
-                    <asp:BoundField DataField="Username" HeaderText="帳號" />
-                    <asp:BoundField DataField="Content" />
+                    <asp:BoundField DataField="Username" HeaderText="帳號">
+                        <ItemStyle Width="100px" />
+                    </asp:BoundField>
+                    <asp:BoundField DataField="Content" HeaderText="留言">
+                         <ItemStyle Width="500px" />
+                    </asp:BoundField>
                     <asp:BoundField DataField="PostTime" HeaderText="發送時間" />
                 </Columns>
             </asp:GridView>

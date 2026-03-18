@@ -196,6 +196,7 @@
     <Content Include="System06_Forums\ArticleList.aspx" />
     <Content Include="System06_Forums\Article_Add.aspx" />
     <Content Include="System06_Forums\Article_byUser.aspx" />
+    <Content Include="System06_Forums\Article_Edit.aspx" />
     <Content Include="System06_Forums\CategoryList.aspx" />
     <Content Include="System06_Forums\Category_Add.aspx" />
     <Content Include="System06_Forums\Comment_Add.aspx" />
@@ -301,6 +302,13 @@
     </Compile>
     <Compile Include="System06_Forums\Article_byUser.aspx.designer.cs">
       <DependentUpon>Article_byUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="System06_Forums\Article_Edit.aspx.cs">
+      <DependentUpon>Article_Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="System06_Forums\Article_Edit.aspx.designer.cs">
+      <DependentUpon>Article_Edit.aspx</DependentUpon>
     </Compile>
     <Compile Include="System06_Forums\CategoryList.aspx.cs">
       <DependentUpon>CategoryList.aspx</DependentUpon>
