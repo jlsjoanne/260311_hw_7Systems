@@ -24,20 +24,6 @@
         </div>
         <br />
         <div>
-            <h4>圖片</h4>
-            <p>(可上傳多檔)</p>
-            <asp:FileUpload ID="ImagesUpload" runat="server" 
-                AllowMultiple="true" accept="image/*"/>
-        </div>
-        <br />
-        <div>
-            <h4>檔案</h4>
-            <p>(可上傳多檔)</p>
-            <asp:FileUpload ID="FilesUpload" runat="server"
-                AllowMiltiple="true"/>
-        </div>
-        <br />
-        <div>
             <h4>連結</h4>
             <asp:Button ID="AddLink" runat="server" Text="新增連結" OnClick="AddLink_Click"/>
             <br />
@@ -45,8 +31,23 @@
         </div>
         <br />
         <div>
-            <asp:Button ID="Submit" runat="server" Text="送出" />
+            <h4>圖片</h4>
+            <p>(可上傳多檔)</p>
+            <asp:FileUpload ID="ImagesUpload" runat="server" 
+                AllowMultiple="True" accept="image/*"/>
         </div>
+        <br />
+        <div>
+            <h4>檔案</h4>
+            <p>(可上傳多檔)</p>
+            <asp:FileUpload ID="FilesUpload" runat="server" AllowMultiple="True"/>
+        </div>
+        <br />
+        <div>
+            <asp:Button ID="Submit" runat="server" Text="下一頁" OnClick="Submit_Click" />
+        </div>
+
+        
         
     </main>
 </asp:Content>
