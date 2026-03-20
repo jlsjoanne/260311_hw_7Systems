@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Add News" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="News_Add.aspx.cs" Inherits="_260311_hw_7Systems.System01_News.News_Add" %>
+﻿<%@ Page Title="新增消息" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="News_Add.aspx.cs" Inherits="_260311_hw_7Systems.System01_News.News_Add" %>
 
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">

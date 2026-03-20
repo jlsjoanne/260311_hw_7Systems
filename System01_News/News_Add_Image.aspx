@@ -1,15 +1,14 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="News_Add_Image.aspx.cs" Inherits="_260311_hw_7Systems.System01_News.News_Add_Image" %>
+﻿<%@ Page Title="新增圖片資訊" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="News_Add_Image.aspx.cs" Inherits="_260311_hw_7Systems.System01_News.News_Add_Image" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+    <main>
+        <h2>新增消息</h2>
+        <h3>編輯圖片資訊</h3>
+        <br />
+        <asp:PlaceHolder ID="PhImage" runat="server"></asp:PlaceHolder>
+        <br />
         <div>
+            <asp:Button ID="Submit" runat="server" Text="下一步" OnClick="Submit_Click" />
         </div>
-    </form>
-</body>
-</html>
+    </main>
+</asp:Content>

@@ -16,9 +16,20 @@ namespace _260311_hw_7Systems.System01_News
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (IsPostBack)
+            if(Session["RoleId"] != null && (Session["RoleId"].ToString() == "1" || Session["RoleId"].ToString() == "2"))
             {
-                CreateLink(LinkCount);
+                if (IsPostBack)
+                {
+                    CreateLink(LinkCount);
+                }
+            }
+            else if(Request.UrlReferrer != null)
+            {
+                Response.Redirect(Request.UrlReferrer.ToString());
+            }
+            else
+            {
+                Response.Redirect("News_List.aspx");
             }
         }
 
@@ -86,12 +97,15 @@ namespace _260311_hw_7Systems.System01_News
             AddToFiles(newsID);
 
             // Links to SQL
+            AddToLinks(newsID);
+
+            Response.Redirect($"News_Add_Image.aspx?NewsID={newsID}");
         }
 
         private string AddToNewsList()
         {
             string connectionString = WebConfigurationManager.ConnectionStrings["NewsDB"].ConnectionString;
-            string insertDataQuery = "INSERT INTO NewsList (NewsTitle, NewsContent, CategoryID) VALUES (@NewsTitle, @NewsContent, @CategoryID)";
+            string insertDataQuery = "INSERT INTO NewsList (NewsTitle, NewsContent, CategoryId) VALUES (@NewsTitle, @NewsContent, @CategoryID)";
 
             using(SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -124,7 +138,7 @@ namespace _260311_hw_7Systems.System01_News
                 }
             }
 
-            string getNewsIDQuery = "SELECT NewsID FROM NewsList WHERE NewsTitle = @NewsTitle AND NewsContent = @NewsContent AND CategoryID = @CategoryID";
+            string getNewsIDQuery = "SELECT NewsId FROM NewsList WHERE NewsTitle = @NewsTitle AND NewsContent = @NewsContent AND CategoryId = @CategoryID";
 
             using(SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -170,7 +184,7 @@ namespace _260311_hw_7Systems.System01_News
             {
                 string folderPath = Server.MapPath("~/Images/");
                 string connectionString = WebConfigurationManager.ConnectionStrings["NewsDB"].ConnectionString;
-                string addToImagesQuery = "INSERT INTO Images (IPath, NewsID) VALUES (@IPath, @NewsID)";
+                string addToImagesQuery = "INSERT INTO Images (IPath, NewsId) VALUES (@IPath, @NewsID)";
 
                 if (!Directory.Exists(folderPath))
                 {
@@ -219,7 +233,7 @@ namespace _260311_hw_7Systems.System01_News
             {
                 string folderPath = Server.MapPath("~/Files/");
                 string connectionString = WebConfigurationManager.ConnectionStrings["NewsDB"].ConnectionString;
-                string addToFilesQuery = "INSERT INTO Files (FPath, NewsID) VALUES (@FPath, @NewsID)";
+                string addToFilesQuery = "INSERT INTO Files (FPath, NewsId) VALUES (@FPath, @NewsID)";
 
                 if (!Directory.Exists(folderPath))
                 {
@@ -293,7 +307,7 @@ namespace _260311_hw_7Systems.System01_News
             }
 
 
-            string addToLinksQuery = "INSER INTO Links (LName, LUrl, IsNewPage, NewsID) VALUES (@LName, @LUrl, @IsNew, @NewsID)";
+            string addToLinksQuery = "INSER INTO Links (LName, LUrl, IsNewPage, NewsId) VALUES (@LName, @LUrl, @IsNew, @NewsID)";
 
             foreach (string[] link in links)
             {

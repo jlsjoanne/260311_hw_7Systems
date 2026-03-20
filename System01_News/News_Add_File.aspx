@@ -1,15 +1,14 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="News_Add_File.aspx.cs" Inherits="_260311_hw_7Systems.System01_News.News_Add_File" %>
+﻿<%@ Page Title="新增檔案資訊" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="News_Add_File.aspx.cs" Inherits="_260311_hw_7Systems.System01_News.News_Add_File" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+    <main>
+        <h2>新增消息</h2>
+        <h3>編輯檔案資訊</h3>
+        <br />
+        <asp:PlaceHolder ID="PhFile" runat="server"></asp:PlaceHolder>
+        <br />
         <div>
+            <asp:Button ID="Submit" runat="server" Text="送出" OnClick="Submit_Click" />
         </div>
-    </form>
-</body>
-</html>
+    </main>
+</asp:Content>
