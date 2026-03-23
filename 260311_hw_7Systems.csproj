@@ -193,7 +193,9 @@
     <Content Include="System01_News\News_Add.aspx" />
     <Content Include="System01_News\News_Add_File.aspx" />
     <Content Include="System01_News\News_Add_Image.aspx" />
+    <Content Include="System01_News\News_Add_Link.aspx" />
     <Content Include="System01_News\News_Edit.aspx" />
+    <Content Include="System01_News\News_Edit_Img_Select.aspx" />
     <Content Include="System01_News\News_List.aspx" />
     <Content Include="System06_Forums\Article.aspx" />
     <Content Include="System06_Forums\ArticleList.aspx" />
@@ -202,6 +204,8 @@
     <Content Include="System06_Forums\Article_Edit.aspx" />
     <Content Include="System06_Forums\CategoryList.aspx" />
     <Content Include="System06_Forums\Category_Add.aspx" />
+    <Content Include="System06_Forums\Category_Admin.aspx" />
+    <Content Include="System06_Forums\Category_Admin_Add.aspx" />
     <Content Include="System06_Forums\Comment_Add.aspx" />
     <Content Include="User\LogIn.aspx" />
     <Content Include="User\Management.aspx" />
@@ -285,12 +289,26 @@
     <Compile Include="System01_News\News_Add_Image.aspx.designer.cs">
       <DependentUpon>News_Add_Image.aspx</DependentUpon>
     </Compile>
+    <Compile Include="System01_News\News_Add_Link.aspx.cs">
+      <DependentUpon>News_Add_Link.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="System01_News\News_Add_Link.aspx.designer.cs">
+      <DependentUpon>News_Add_Link.aspx</DependentUpon>
+    </Compile>
     <Compile Include="System01_News\News_Edit.aspx.cs">
       <DependentUpon>News_Edit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="System01_News\News_Edit.aspx.designer.cs">
       <DependentUpon>News_Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="System01_News\News_Edit_Img_Select.aspx.cs">
+      <DependentUpon>News_Edit_Img_Select.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="System01_News\News_Edit_Img_Select.aspx.designer.cs">
+      <DependentUpon>News_Edit_Img_Select.aspx</DependentUpon>
     </Compile>
     <Compile Include="System01_News\News_List.aspx.cs">
       <DependentUpon>News_List.aspx</DependentUpon>
@@ -347,6 +365,20 @@
     </Compile>
     <Compile Include="System06_Forums\Category_Add.aspx.designer.cs">
       <DependentUpon>Category_Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="System06_Forums\Category_Admin.aspx.cs">
+      <DependentUpon>Category_Admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="System06_Forums\Category_Admin.aspx.designer.cs">
+      <DependentUpon>Category_Admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="System06_Forums\Category_Admin_Add.aspx.cs">
+      <DependentUpon>Category_Admin_Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="System06_Forums\Category_Admin_Add.aspx.designer.cs">
+      <DependentUpon>Category_Admin_Add.aspx</DependentUpon>
     </Compile>
     <Compile Include="System06_Forums\Comment_Add.aspx.cs">
       <DependentUpon>Comment_Add.aspx</DependentUpon>

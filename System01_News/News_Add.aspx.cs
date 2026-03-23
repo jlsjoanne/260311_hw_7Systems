@@ -18,10 +18,10 @@ namespace _260311_hw_7Systems.System01_News
         {
             if(Session["RoleId"] != null && (Session["RoleId"].ToString() == "1" || Session["RoleId"].ToString() == "2"))
             {
-                if (IsPostBack)
-                {
-                    CreateLink(LinkCount);
-                }
+                //if (IsPostBack)
+                //{
+                //    CreateLink(LinkCount);
+                //}
             }
             else if(Request.UrlReferrer != null)
             {
@@ -33,57 +33,57 @@ namespace _260311_hw_7Systems.System01_News
             }
         }
 
-        private int LinkCount
-        {
-            get
-            {
-                if (ViewState["LinkCount"] == null) { return 0; }
-                return (int)ViewState["LinkCount"];
-            }
-            set
-            {
-                ViewState["LinkCount"] = value;
-            }
-        }
+        //private int LinkCount
+        //{
+        //    get
+        //    {
+        //        if (ViewState["LinkCount"] == null) { return 0; }
+        //        return (int)ViewState["LinkCount"];
+        //    }
+        //    set
+        //    {
+        //        ViewState["LinkCount"] = value;
+        //    }
+        //}
 
-        protected void AddLink_Click(object sender, EventArgs e)
-        {
-            LinkCount++;
-            CreateLink(LinkCount);
-        }
+        //protected void AddLink_Click(object sender, EventArgs e)
+        //{
+        //    LinkCount++;
+        //    CreateLink(LinkCount);
+        //}
 
-        private void CreateLink(int count)
-        {
-            PhLink.Controls.Clear();
+        //private void CreateLink(int count)
+        //{
+        //    PhLink.Controls.Clear();
 
-            for(int i = 0; i < count; i++)
-            {
-                Label LTitle = new Label();
-                Label LUrl = new Label();
-                TextBox TitleInput = new TextBox();
-                TextBox UrlInput = new TextBox();
-                CheckBox IsNew = new CheckBox();
+        //    for(int i = 0; i < count; i++)
+        //    {
+        //        Label LTitle = new Label();
+        //        Label LUrl = new Label();
+        //        TextBox TitleInput = new TextBox();
+        //        TextBox UrlInput = new TextBox();
+        //        CheckBox IsNew = new CheckBox();
 
-                LTitle.ID = $"LTitle{i}";
-                LUrl.ID = $"LUrl{i}";
-                TitleInput.ID = $"TitleInput{i}";
-                UrlInput.ID = $"UrlInput{i}";
-                IsNew.ID = $"IsNew{i}";
+        //        LTitle.ID = $"LTitle{i}";
+        //        LUrl.ID = $"LUrl{i}";
+        //        TitleInput.ID = $"TitleInput{i}";
+        //        UrlInput.ID = $"UrlInput{i}";
+        //        IsNew.ID = $"IsNew{i}";
 
-                LTitle.Text = "連結名稱";
-                LUrl.Text = "Url";
-                IsNew.Text = "是否開新視窗";
+        //        LTitle.Text = "連結名稱";
+        //        LUrl.Text = "Url";
+        //        IsNew.Text = "是否開新視窗";
 
-                PhLink.Controls.Add(LTitle);
-                PhLink.Controls.Add(TitleInput);
-                PhLink.Controls.Add(new LiteralControl("<br />"));
-                PhLink.Controls.Add(LUrl);
-                PhLink.Controls.Add(UrlInput);
-                PhLink.Controls.Add(new LiteralControl("<br />"));
-                PhLink.Controls.Add(IsNew);
-                PhLink.Controls.Add(new LiteralControl("<br /><br />"));
-            }
-        }
+        //        PhLink.Controls.Add(LTitle);
+        //        PhLink.Controls.Add(TitleInput);
+        //        PhLink.Controls.Add(new LiteralControl("<br />"));
+        //        PhLink.Controls.Add(LUrl);
+        //        PhLink.Controls.Add(UrlInput);
+        //        PhLink.Controls.Add(new LiteralControl("<br />"));
+        //        PhLink.Controls.Add(IsNew);
+        //        PhLink.Controls.Add(new LiteralControl("<br /><br />"));
+        //    }
+        //}
 
         protected void Submit_Click(object sender, EventArgs e)
         {
@@ -97,7 +97,7 @@ namespace _260311_hw_7Systems.System01_News
             AddToFiles(newsID);
 
             // Links to SQL
-            AddToLinks(newsID);
+            //AddToLinks(newsID);
 
             Response.Redirect($"News_Add_Image.aspx?NewsID={newsID}");
         }
@@ -193,7 +193,7 @@ namespace _260311_hw_7Systems.System01_News
 
                 foreach(HttpPostedFile postedFile in ImagesUpload.PostedFiles)
                 {
-                    string fileName = Path.GetFileName(postedFile.FileName);
+                    string fileName = Guid.NewGuid().ToString() + Path.GetExtension(postedFile.FileName);
                     postedFile.SaveAs(Path.Combine(folderPath, fileName));
 
                     using(SqlConnection conn = new SqlConnection(connectionString))
@@ -242,7 +242,7 @@ namespace _260311_hw_7Systems.System01_News
 
                 foreach(HttpPostedFile postedFile in FilesUpload.PostedFiles)
                 {
-                    string fileName = Path.GetFileName(postedFile.FileName);
+                    string fileName = Guid.NewGuid().ToString() + Path.GetExtension(postedFile.FileName);
                     postedFile.SaveAs(Path.Combine(folderPath, fileName));
 
                     using(SqlConnection conn = new SqlConnection(connectionString))
@@ -279,73 +279,73 @@ namespace _260311_hw_7Systems.System01_News
             }
         }
 
-        private void AddToLinks(string newsID)
-        {
-            List<string[]> links = new List<string[]>();
-            string connectionString = WebConfigurationManager.ConnectionStrings["NewsDB"].ConnectionString;
+        //private void AddToLinks(string newsID)
+        //{
+        //    List<string[]> links = new List<string[]>();
+        //    string connectionString = WebConfigurationManager.ConnectionStrings["NewsDB"].ConnectionString;
 
-            for (int i = 0; i< LinkCount; i++)
-            {
-                string[] link = new string[3];
-                TextBox titleTb = (TextBox)PhLink.FindControl($"TitleInput{i}");
-                TextBox contentTb = (TextBox)PhLink.FindControl($"UrlInput{i}");
-                CheckBox isNew = (CheckBox)PhLink.FindControl($"IsNew{i}");
+        //    for (int i = 0; i< LinkCount; i++)
+        //    {
+        //        string[] link = new string[3];
+        //        TextBox titleTb = (TextBox)PhLink.FindControl($"TitleInput{i}");
+        //        TextBox contentTb = (TextBox)PhLink.FindControl($"UrlInput{i}");
+        //        CheckBox isNew = (CheckBox)PhLink.FindControl($"IsNew{i}");
 
-                link[0] = titleTb.Text;
-                link[1] = contentTb.Text;
+        //        link[0] = titleTb.Text;
+        //        link[1] = contentTb.Text;
 
-                if (isNew.Checked)
-                {
-                    link[2] = "TRUE";
-                }
-                else
-                {
-                    link[2] = "FALSE";
-                }
+        //        if (isNew.Checked)
+        //        {
+        //            link[2] = "TRUE";
+        //        }
+        //        else
+        //        {
+        //            link[2] = "FALSE";
+        //        }
 
-                links.Add(link);
-            }
-
-
-            string addToLinksQuery = "INSER INTO Links (LName, LUrl, IsNewPage, NewsId) VALUES (@LName, @LUrl, @IsNew, @NewsID)";
-
-            foreach (string[] link in links)
-            {
-                if (link[1] != "" || link[1] != null)
-                {
-                    using(SqlConnection conn = new SqlConnection(connectionString))
-                    {
-                        using(SqlCommand command = new SqlCommand(addToLinksQuery, conn))
-                        {
-                            command.Parameters.AddWithValue("@LName", link[0]);
-                            command.Parameters.AddWithValue("@LUrl", link[1]);
-                            command.Parameters.AddWithValue("@IsNew", link[2]);
-                            command.Parameters.AddWithValue("@NewsID", newsID);
-
-                            try
-                            {
-                                conn.Open();
-                                int result = command.ExecuteNonQuery();
-                                if(result < 0)
-                                {
-                                    Response.Write("<script>alert('新增連結失敗')</script>");
-                                }
-                            }
-                            catch(Exception ex)
-                            {
-                                Response.Write($"<script>alert('{ex.Message}')</script>");
-                            }
-                            finally
-                            {
-                                conn.Close();
-                            }
-                        }
-                    }
-                }
-            }
+        //        links.Add(link);
+        //    }
 
 
-        }
+        //    string addToLinksQuery = "INSER INTO Links (LName, LUrl, IsNewPage, NewsId) VALUES (@LName, @LUrl, @IsNew, @NewsID)";
+
+        //    foreach (string[] link in links)
+        //    {
+        //        if (link[1] != "" || link[1] != null)
+        //        {
+        //            using(SqlConnection conn = new SqlConnection(connectionString))
+        //            {
+        //                using(SqlCommand command = new SqlCommand(addToLinksQuery, conn))
+        //                {
+        //                    command.Parameters.AddWithValue("@LName", link[0]);
+        //                    command.Parameters.AddWithValue("@LUrl", link[1]);
+        //                    command.Parameters.AddWithValue("@IsNew", link[2]);
+        //                    command.Parameters.AddWithValue("@NewsID", newsID);
+
+        //                    try
+        //                    {
+        //                        conn.Open();
+        //                        int result = command.ExecuteNonQuery();
+        //                        if(result < 0)
+        //                        {
+        //                            Response.Write("<script>alert('新增連結失敗')</script>");
+        //                        }
+        //                    }
+        //                    catch(Exception ex)
+        //                    {
+        //                        Response.Write($"<script>alert('{ex.Message}')</script>");
+        //                    }
+        //                    finally
+        //                    {
+        //                        conn.Close();
+        //                    }
+        //                }
+        //            }
+        //        }
+        //    }
+
+
+        //}
 
         
     }

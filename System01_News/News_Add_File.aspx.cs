@@ -138,7 +138,8 @@ namespace _260311_hw_7Systems.System01_News
                 }
             }
 
-            Response.Redirect("News_List.aspx");
+            string newsID = Request.QueryString["NewsID"].ToString();
+            Response.Redirect($"News_Add_Link.aspx?NewsID={newsID}");
         }
     }
 }

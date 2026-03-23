@@ -51,24 +51,6 @@ namespace _260311_hw_7Systems.System01_News
         protected global::System.Web.UI.WebControls.TextBox Content;
 
         /// <summary>
-        /// AddLink control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button AddLink;
-
-        /// <summary>
-        /// PhLink control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder PhLink;
-
-        /// <summary>
         /// ImagesUpload control.
         /// </summary>
         /// <remarks>

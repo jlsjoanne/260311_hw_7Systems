@@ -24,15 +24,6 @@ namespace _260311_hw_7Systems.System06_Forums
         protected global::System.Web.UI.WebControls.TextBox CategoryName;
 
         /// <summary>
-        /// Test control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Test;
-
-        /// <summary>
         /// Submit control.
         /// </summary>
         /// <remarks>

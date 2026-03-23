@@ -11,7 +11,25 @@
         <b>發表時間</b>
         <asp:Label ID="PostedTime" runat="server"></asp:Label>
         <br /><br />
-        <asp:Literal ID="NewsContent" runat="server"></asp:Literal>
+        <b>內文</b>
+        <div style ="border: 1px solid black; padding: 5px">
+            <asp:Literal ID="NewsContent" runat="server"></asp:Literal>
+        </div>
+        <br />
+        <div>
+            <p>圖片</p>
+            <asp:PlaceHolder ID="PhImg" runat="server"></asp:PlaceHolder>
+        </div>
+        <br />
+        <div>
+            <p>檔案</p>
+            <asp:PlaceHolder ID="PhFile" runat="server"></asp:PlaceHolder>
+        </div>
+        <br />
+        <div>
+            <p>連結</p>
+            <asp:PlaceHolder ID="PhLink" runat="server"></asp:PlaceHolder>
+        </div>
     </main>
 </asp:Content>
 

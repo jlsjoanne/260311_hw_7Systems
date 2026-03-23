@@ -8,7 +8,7 @@
         <asp:PlaceHolder ID="PhFile" runat="server"></asp:PlaceHolder>
         <br />
         <div>
-            <asp:Button ID="Submit" runat="server" Text="送出" OnClick="Submit_Click" />
+            <asp:Button ID="Submit" runat="server" Text="下一步" OnClick="Submit_Click" />
         </div>
     </main>
 </asp:Content>

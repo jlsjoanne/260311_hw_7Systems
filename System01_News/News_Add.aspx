@@ -13,7 +13,7 @@
         <div>
             <h4>分類</h4>
             <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource2" DataTextField="CategoryName" DataValueField="CategoryId"></asp:DropDownList>
-            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:NewsDB %>" SelectCommand="SELECT * FROM [Category]"></asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:NewsDB %>" SelectCommand="SELECT * FROM [Category] ORDER BY [CategoryOrder]"></asp:SqlDataSource>
         </div>
         <br />
         <div>
@@ -21,13 +21,6 @@
             <p>(字數限制: 1000字)</p>
             <asp:TextBox ID="Content" runat="server"
                 TextMode="MultiLine" Rows="10" Width="100%"></asp:TextBox>
-        </div>
-        <br />
-        <div>
-            <h4>連結</h4>
-            <asp:Button ID="AddLink" runat="server" Text="新增連結" OnClick="AddLink_Click"/>
-            <br />
-            <asp:PlaceHolder ID="PhLink" runat="server"></asp:PlaceHolder>
         </div>
         <br />
         <div>
