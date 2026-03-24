@@ -24,6 +24,15 @@ namespace _260311_hw_7Systems.System06_Forums
         protected global::System.Web.UI.WebControls.Button AddCategory;
 
         /// <summary>
+        /// AdminMgn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button AdminMgn;
+
+        /// <summary>
         /// GridView1 control.
         /// </summary>
         /// <remarks>

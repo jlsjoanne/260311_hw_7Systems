@@ -5,6 +5,10 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.IO;
+using System.Data;
+using System.Web.Configuration;
+using System.Data.SqlClient;
+
 
 namespace _260311_hw_7Systems.System01_News
 {
@@ -12,139 +16,337 @@ namespace _260311_hw_7Systems.System01_News
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if(Session["RoleId"] != null && (Session["RoleId"].ToString() == "1" || Session["RoleId"].ToString() == "2"))
+            {
+                //if (IsPostBack)
+                //{
+                //    CreateLink(LinkCount);
+                //}
+            }
+            else if(Request.UrlReferrer != null)
+            {
+                Response.Redirect(Request.UrlReferrer.ToString());
+            }
+            else
+            {
+                Response.Redirect("News_List.aspx");
+            }
         }
 
+        //private int LinkCount
+        //{
+        //    get
+        //    {
+        //        if (ViewState["LinkCount"] == null) { return 0; }
+        //        return (int)ViewState["LinkCount"];
+        //    }
+        //    set
+        //    {
+        //        ViewState["LinkCount"] = value;
+        //    }
+        //}
 
-
-        //static int linkIdx = 0;
         //protected void AddLink_Click(object sender, EventArgs e)
         //{
-        //    linkIdx++;
-        //    for(int j=0; j < linkIdx; j++)
+        //    LinkCount++;
+        //    CreateLink(LinkCount);
+        //}
+
+        //private void CreateLink(int count)
+        //{
+        //    PhLink.Controls.Clear();
+
+        //    for(int i = 0; i < count; i++)
         //    {
-        //        Label Lname = new Label();
+        //        Label LTitle = new Label();
         //        Label LUrl = new Label();
-        //        Lname.Text = "連結名稱";
+        //        TextBox TitleInput = new TextBox();
+        //        TextBox UrlInput = new TextBox();
+        //        CheckBox IsNew = new CheckBox();
+
+        //        LTitle.ID = $"LTitle{i}";
+        //        LUrl.ID = $"LUrl{i}";
+        //        TitleInput.ID = $"TitleInput{i}";
+        //        UrlInput.ID = $"UrlInput{i}";
+        //        IsNew.ID = $"IsNew{i}";
+
+        //        LTitle.Text = "連結名稱";
         //        LUrl.Text = "Url";
-        //        Lname.ID = $"LinkName{j}";
-        //        LUrl.ID = $"Url{j}";
-        //        CheckBox IsNewWindow = new CheckBox();
-        //        IsNewWindow.Text = "是否另開視窗";
-        //        IsNewWindow.ID = $"IsNew{j}";
-        //        TextBox LnameInput = new TextBox();
-        //        TextBox LUrlInput = new TextBox();
-        //        LnameInput.ID = $"LNameInput{j}";
-        //        LUrlInput.ID = $"LUrlInput{j}";
-        //        LnameInput.Columns = 100;
-        //        LUrlInput.Columns = 100;
+        //        IsNew.Text = "是否開新視窗";
 
-
-        //        PrLink.Controls.Add(Lname);
-        //        PrLink.Controls.Add(LnameInput);
-        //        PrLink.Controls.Add(new LiteralControl("<br />"));
-        //        PrLink.Controls.Add(LUrl);
-        //        PrLink.Controls.Add(LUrlInput);
-        //        PrLink.Controls.Add(new LiteralControl("<br />"));
-        //        PrLink.Controls.Add(IsNewWindow);
-        //        PrLink.Controls.Add(new LiteralControl("<br /><br />"));
+        //        PhLink.Controls.Add(LTitle);
+        //        PhLink.Controls.Add(TitleInput);
+        //        PhLink.Controls.Add(new LiteralControl("<br />"));
+        //        PhLink.Controls.Add(LUrl);
+        //        PhLink.Controls.Add(UrlInput);
+        //        PhLink.Controls.Add(new LiteralControl("<br />"));
+        //        PhLink.Controls.Add(IsNew);
+        //        PhLink.Controls.Add(new LiteralControl("<br /><br />"));
         //    }
         //}
 
-        //List<newsFile> imgFiles = new List<newsFile>();
-        //static int imgIndex = 0;
-        //protected void AddImg_Click(object sender, EventArgs e)
-        //{
-        //    imgIndex++;
-        //    for(int j = 0; j < imgIndex; j++)
-        //    {
-        //        Label imgName = new Label();
-        //        Label imgDesc = new Label();
-        //        TextBox imgNameInput = new TextBox();
-        //        TextBox imgDescInput = new TextBox();
-        //        FileUpload imgFile = new FileUpload();
-        //        imgName.Text = "圖片名稱: ";
-        //        imgDesc.Text = "圖片說明: ";
-        //        imgName.ID = $"imgName{j}";
-        //        imgDesc.ID = $"imgDesc{j}";
-        //        imgNameInput.ID = $"imgNameInput{j}";
-        //        imgDescInput.ID = $"imgDescInput{j}";
-        //        imgFile.ID = $"imgFile{j}";
-        //        imgFile.Attributes.Add("accept",".jpg,.jpeg,.png,.gif");
+        protected void Submit_Click(object sender, EventArgs e)
+        {
+            // Title, Content, Category to SQL
+            string newsID = AddToNewsList();
 
-        //        PhImg.Controls.Add(imgName);
-        //        PhImg.Controls.Add(imgNameInput);
-        //        PhImg.Controls.Add(new LiteralControl("<br />"));
-        //        PhImg.Controls.Add(imgDesc);
-        //        PhImg.Controls.Add(imgDescInput);
-        //        PhImg.Controls.Add(new LiteralControl("<br />"));
-        //        PhImg.Controls.Add(imgFile);
-        //        PhImg.Controls.Add(new LiteralControl("<br /><br />"));
+            // Image to SQL
+            AddToImages(newsID);
 
-        //    }
-        //    ImgUpload.Visible = true;
-        //}
+            // File to SQL
+            AddToFiles(newsID);
 
-        //protected void ImgUpload_Click(object sender, EventArgs e)
-        //{
-        //    IsImgSuccess.Text += PhImg.Controls.Count.ToString();
-        //    string uploadFolderPath = Directory.GetParent(Server.MapPath("~/Images/")).FullName;
-        //    if (!Directory.Exists(uploadFolderPath))
-        //    {
-        //        Directory.CreateDirectory(uploadFolderPath);
-        //    }
+            // Links to SQL
+            //AddToLinks(newsID);
 
-            
-        //    for (int j = 0; j < imgIndex; j++)
-        //    {
-        //        newsFile imgInfo = new newsFile();
-        //        imgFiles.Add(imgInfo);
-        //    }
+            Response.Redirect($"News_Add_Image.aspx?NewsID={newsID}");
+        }
 
-            
-        //    int idx = 0;
+        private string AddToNewsList()
+        {
+            string connectionString = WebConfigurationManager.ConnectionStrings["NewsDB"].ConnectionString;
+            string insertDataQuery = "INSERT INTO NewsList (NewsTitle, NewsContent, CategoryId) VALUES (@NewsTitle, @NewsContent, @CategoryID)";
 
-            
+            using(SqlConnection conn = new SqlConnection(connectionString))
+            {
+                using(SqlCommand command = new SqlCommand(insertDataQuery, conn))
+                {
+                    command.Parameters.AddWithValue("@NewsTitle", NewTitle.Text);
+                    command.Parameters.AddWithValue("@NewsContent", Content.Text);
+                    command.Parameters.AddWithValue("@CategoryID", DropDownList1.SelectedValue);
 
-        //    foreach (Control ctrl in PhImg.Controls)
-        //    {
+                    try
+                    {
+                        conn.Open();
+                        int result = command.ExecuteNonQuery();
+
+                        if (result < 0)
+                        {
+                            Response.Write("<script>alert('新增文章失敗')</script>");
+                        }
+                        
+                    }
+                    catch(Exception ex)
+                    {
+                        Response.Write($"<script>alert('{ex.Message}')</script>");
+                    }
+                    finally
+                    {
+                        conn.Close();
+                    }
+
+                }
+            }
+
+            string getNewsIDQuery = "SELECT NewsId FROM NewsList WHERE NewsTitle = @NewsTitle AND NewsContent = @NewsContent AND CategoryId = @CategoryID";
+
+            using(SqlConnection conn = new SqlConnection(connectionString))
+            {
+                using(SqlCommand command = new SqlCommand(getNewsIDQuery, conn))
+                {
+                    command.Parameters.AddWithValue("@NewsTitle", NewTitle.Text);
+                    command.Parameters.AddWithValue("@NewsContent", Content.Text);
+                    command.Parameters.AddWithValue("@CategoryID", DropDownList1.SelectedValue);
+
+                    SqlDataReader dr = null;
+                    try
+                    {
+                        conn.Open();
+                        dr = command.ExecuteReader();
+
+                        if (dr.HasRows)
+                        {
+                            dr.Read();
+                            return dr["NewsID"].ToString();
+                        }
+                        else
+                        {
+                            throw new Exception("Can't find NewsID");
+                        }
+                    }
+                    catch(Exception ex)
+                    {
+                        Response.Write($"<script>alert('{ex.Message}')</script>");
+                        throw new Exception(ex.Message);
+                    }
+                    finally
+                    {
+                        dr.Close();
+                        conn.Close();
+                    }
+                }
+            }
+        }
+
+        private void AddToImages(string newsID)
+        {
+            if (ImagesUpload.HasFiles)
+            {
+                string folderPath = Server.MapPath("~/Images/");
+                string connectionString = WebConfigurationManager.ConnectionStrings["NewsDB"].ConnectionString;
+                string addToImagesQuery = "INSERT INTO Images (IPath, NewsId) VALUES (@IPath, @NewsID)";
+
+                if (!Directory.Exists(folderPath))
+                {
+                    Directory.CreateDirectory(folderPath);
+                }
+
+                foreach(HttpPostedFile postedFile in ImagesUpload.PostedFiles)
+                {
+                    string fileName = Guid.NewGuid().ToString() + Path.GetExtension(postedFile.FileName);
+                    postedFile.SaveAs(Path.Combine(folderPath, fileName));
+
+                    using(SqlConnection conn = new SqlConnection(connectionString))
+                    {
+                        using(SqlCommand command = new SqlCommand(addToImagesQuery, conn))
+                        {
+                            command.Parameters.AddWithValue("@IPath", Path.Combine(folderPath, fileName));
+                            command.Parameters.AddWithValue("@NewsID", newsID);
+
+                            try
+                            {
+                                conn.Open();
+                                int result = command.ExecuteNonQuery();
+
+                                if (result < 0)
+                                {
+                                    Response.Write("<script>alert('新增圖片失敗')</script>");
+                                }
+                            }
+                            catch(Exception ex)
+                            {
+                                Response.Write($"<script>alert('{ex.Message}')</script>");
+                            }
+                            finally
+                            {
+                                conn.Close();
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        private void AddToFiles(string newsID)
+        {
+            if (FilesUpload.HasFiles)
+            {
+                string folderPath = Server.MapPath("~/Files/");
+                string connectionString = WebConfigurationManager.ConnectionStrings["NewsDB"].ConnectionString;
+                string addToFilesQuery = "INSERT INTO Files (FPath, NewsId) VALUES (@FPath, @NewsID)";
+
+                if (!Directory.Exists(folderPath))
+                {
+                    Directory.CreateDirectory(folderPath);
+                }
+
+                foreach(HttpPostedFile postedFile in FilesUpload.PostedFiles)
+                {
+                    string fileName = Guid.NewGuid().ToString() + Path.GetExtension(postedFile.FileName);
+                    postedFile.SaveAs(Path.Combine(folderPath, fileName));
+
+                    using(SqlConnection conn = new SqlConnection(connectionString))
+                    {
+                        using(SqlCommand command = new SqlCommand(addToFilesQuery, conn))
+                        {
+                            command.Parameters.AddWithValue("@FPath", Path.Combine(folderPath, fileName));
+                            command.Parameters.AddWithValue("@NewsID", newsID);
+
+                            try
+                            {
+                                conn.Open();
+                                int result = command.ExecuteNonQuery();
+
+                                if(result < 0)
+                                {
+                                    Response.Write("<script>alert('新增檔案失敗')</script>");
+                                }
+                            }
+                            catch(Exception ex)
+                            {
+                                Response.Write($"<script>alert('{ex.Message}')<script>");
+                            }
+                            finally
+                            {
+                                conn.Close();
+                            }
+                        }
+                    }
+                }
+
                 
-        //        if (ctrl.GetType() == typeof(TextBox))
+
+            }
+        }
+
+        //private void AddToLinks(string newsID)
+        //{
+        //    List<string[]> links = new List<string[]>();
+        //    string connectionString = WebConfigurationManager.ConnectionStrings["NewsDB"].ConnectionString;
+
+        //    for (int i = 0; i< LinkCount; i++)
+        //    {
+        //        string[] link = new string[3];
+        //        TextBox titleTb = (TextBox)PhLink.FindControl($"TitleInput{i}");
+        //        TextBox contentTb = (TextBox)PhLink.FindControl($"UrlInput{i}");
+        //        CheckBox isNew = (CheckBox)PhLink.FindControl($"IsNew{i}");
+
+        //        link[0] = titleTb.Text;
+        //        link[1] = contentTb.Text;
+
+        //        if (isNew.Checked)
         //        {
-        //            TextBox tb = (TextBox)ctrl;
-        //            if (tb.ID.ToString().Contains("imgNameInput"))
-        //            {
-        //                imgFiles[idx].fileName = tb.Text;
-        //                IsImgSuccess.Text += tb.Text;
-        //            }
-        //            else if (tb.ID.ToString().Contains("imgDescInput"))
-        //            {
-        //                imgFiles[idx].fileDesc = tb.Text;
-        //                IsImgSuccess.Text += tb.Text;
-        //            }
+        //            link[2] = "TRUE";
         //        }
-        //        else if (ctrl.GetType() == typeof(FileUpload))
+        //        else
         //        {
-        //            FileUpload img = (FileUpload)ctrl;
-        //            if (img.HasFile)
+        //            link[2] = "FALSE";
+        //        }
+
+        //        links.Add(link);
+        //    }
+
+
+        //    string addToLinksQuery = "INSER INTO Links (LName, LUrl, IsNewPage, NewsId) VALUES (@LName, @LUrl, @IsNew, @NewsID)";
+
+        //    foreach (string[] link in links)
+        //    {
+        //        if (link[1] != "" || link[1] != null)
+        //        {
+        //            using(SqlConnection conn = new SqlConnection(connectionString))
         //            {
-        //                string filename = Path.GetFileName(img.PostedFile.FileName);
-        //                string filePath = Path.Combine(uploadFolderPath, filename);
-        //                img.PostedFile.SaveAs(filePath);
-        //                IsImgSuccess.Text += "上傳成功!";
-        //                imgFiles[idx].filePath = filePath;
-        //                idx++;
-        //            }
-        //            else
-        //            {
-        //                IsImgSuccess.Text += "沒有檔案!";
+        //                using(SqlCommand command = new SqlCommand(addToLinksQuery, conn))
+        //                {
+        //                    command.Parameters.AddWithValue("@LName", link[0]);
+        //                    command.Parameters.AddWithValue("@LUrl", link[1]);
+        //                    command.Parameters.AddWithValue("@IsNew", link[2]);
+        //                    command.Parameters.AddWithValue("@NewsID", newsID);
+
+        //                    try
+        //                    {
+        //                        conn.Open();
+        //                        int result = command.ExecuteNonQuery();
+        //                        if(result < 0)
+        //                        {
+        //                            Response.Write("<script>alert('新增連結失敗')</script>");
+        //                        }
+        //                    }
+        //                    catch(Exception ex)
+        //                    {
+        //                        Response.Write($"<script>alert('{ex.Message}')</script>");
+        //                    }
+        //                    finally
+        //                    {
+        //                        conn.Close();
+        //                    }
+        //                }
         //            }
         //        }
         //    }
 
+
         //}
-            
-            
+
         
     }
 }

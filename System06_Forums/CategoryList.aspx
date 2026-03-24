@@ -4,21 +4,25 @@
     <main>
         <h2>文章類別</h2>
         <div>
-            <asp:Button ID="AddCategory" runat="server" Text="新增類別" OnClick="AddCategory_Click" Visible="False" />
+            <asp:Button ID="AddCategory" runat="server" Text="新增類別" OnClick="AddCategory_Click" Visible="False" /> &nbsp;
+            <asp:Button ID="AdminMgn" runat="server" Text="版面權限管理" OnClick="AdminMgn_Click" Visible="False" />
         </div>
+
         <br />
         <div>
-            <asp:GridView ID="GridView1" runat="server" DataSourceID="ForumCategory" DataKeyNames="CategoryID" AutoGenerateColumns="False" Width ="200px">
+            <asp:GridView ID="GridView1" runat="server" DataSourceID="ForumCategory" DataKeyNames="CategoryID" AutoGenerateColumns="False" Width ="100%">
                 <Columns>
                     <asp:CommandField ShowDeleteButton="False" ShowEditButton="False" />
+                    <asp:BoundField DataField="CategoryOrder" HeaderText="分類排序" Visible="False" />
+                    <asp:BoundField DataField="CategoryName" HeaderText="分類名稱" Visible="False" />
                     <asp:HyperLinkField DataNavigateUrlFields="CategoryID" DataNavigateUrlFormatString="ArticleList.aspx?CategoryID={0}" DataTextField="CategoryName" HeaderText="分類名稱" />
                 </Columns>
             </asp:GridView>
             <asp:SqlDataSource ID="ForumCategory" runat="server" 
                 ConnectionString="<%$ ConnectionStrings:ForumDB %>" 
                 DeleteCommand="DELETE FROM [Category] WHERE CategoryID = @CategoryID" 
-                SelectCommand="SELECT * FROM [Category]" 
-                UpdateCommand="UPDATE [Category] SET CategoryName = @CategoryName WHERE CategoryID = @CategoryID">
+                SelectCommand="SELECT * FROM [Category] ORDER BY CategoryOrder" 
+                UpdateCommand="UPDATE [Category] SET CategoryName = @CategoryName, CategoryOrder = @CategoryOrder WHERE CategoryID = @CategoryID">
                 <DeleteParameters>
                     <asp:Parameter Name="CategoryID" />
                 </DeleteParameters>

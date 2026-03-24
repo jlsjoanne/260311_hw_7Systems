@@ -10,9 +10,7 @@
             <asp:TextBox ID="CategoryName" runat="server"></asp:TextBox>
         </div>
         <br />
-        <div>
-            <asp:Label ID="Test" runat="server"></asp:Label>
-        </div>
+        
         <div>
             <asp:Button ID="Submit" runat="server" Text="送出" OnClick="Submit_Click" />
         </div>
