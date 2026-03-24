@@ -3,10 +3,16 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <main aria-labelledby="title">
         <div>
-            <b>
-                <p>選擇相簿封面</p>
-            </b>
-            <asp:DropDownList ID="DropDownList1" runat="server"></asp:DropDownList>
+            <h3>選擇相簿封面</h3>
+
+            <p><b>相片名稱</b></p>
+            <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="PhtotId" DataValueField="PhtotId"></asp:DropDownList>
+            
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:PhotoAlbumDB %>" SelectCommand="SELECT * FROM [Photo] WHERE ([AlbumId] = @AlbumId)">
+                <SelectParameters>
+                    <asp:QueryStringParameter Name="AlbumId" QueryStringField="AlbumId" Type="Object" />
+                </SelectParameters>
+            </asp:SqlDataSource>
             
         </div>
         <br />
