@@ -19,6 +19,7 @@ namespace _260311_hw_7Systems.System02_PhotoAlbums
             {
                 string albumId = Request.QueryString["AlbumId"].ToString();
                 GetPhotoData(albumId);
+                
             }
             else if (Request.UrlReferrer != null)
             {
@@ -53,7 +54,10 @@ namespace _260311_hw_7Systems.System02_PhotoAlbums
                             while (dr.Read())
                             {
                                 string photoId = dr["PhotoId"].ToString();
-                                photoIdList.Add(photoId);
+                                if (!photoIdList.Contains(photoId))
+                                {
+                                    photoIdList.Add(photoId);
+                                }                    
 
                                 string folderPath = "~/Images/";
 
@@ -75,6 +79,8 @@ namespace _260311_hw_7Systems.System02_PhotoAlbums
                                 Photo.AlternateText = dr["PhotoName"].ToString();
                                 Photo.Height = new Unit("100px");
                                 Photo.Width = new Unit("200px");
+                                PNameIn.Text = dr["PhotoName"].ToString();
+                                PDescIn.Text = dr["PhotoDesc"].ToString();
 
                                 PhPhoto.Controls.Add(Photo);
                                 PhPhoto.Controls.Add(new LiteralControl("<br />"));

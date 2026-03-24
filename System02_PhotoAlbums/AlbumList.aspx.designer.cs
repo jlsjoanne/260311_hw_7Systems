@@ -13,5 +13,23 @@ namespace _260311_hw_7Systems.System02_PhotoAlbums
 
     public partial class AlbumList
     {
+
+        /// <summary>
+        /// AddNew control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button AddNew;
+
+        /// <summary>
+        /// AlbumRepeater control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater AlbumRepeater;
     }
 }
