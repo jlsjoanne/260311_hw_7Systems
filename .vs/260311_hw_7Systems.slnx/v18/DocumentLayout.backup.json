@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\jlsjo\\Documents\\RocketCamp\\Webform\\260311_hw_7Systems\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6D99CF2F-BDDC-4D82-8B7E-8582BBEA7ACD}|260311_hw_7Systems.csproj|c:\\users\\jlsjo\\documents\\rocketcamp\\webform\\260311_hw_7systems\\system06_forums\\category_admin.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{6D99CF2F-BDDC-4D82-8B7E-8582BBEA7ACD}|260311_hw_7Systems.csproj|solutionrelative:system06_forums\\category_admin.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{6D99CF2F-BDDC-4D82-8B7E-8582BBEA7ACD}|260311_hw_7Systems.csproj|c:\\users\\jlsjo\\documents\\rocketcamp\\webform\\260311_hw_7systems\\system02_photoalbums\\photo_add_desc.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D99CF2F-BDDC-4D82-8B7E-8582BBEA7ACD}|260311_hw_7Systems.csproj|solutionrelative:system02_photoalbums\\photo_add_desc.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6D99CF2F-BDDC-4D82-8B7E-8582BBEA7ACD}|260311_hw_7Systems.csproj|c:\\users\\jlsjo\\documents\\rocketcamp\\webform\\260311_hw_7systems\\system06_forums\\category_admin_add.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{6D99CF2F-BDDC-4D82-8B7E-8582BBEA7ACD}|260311_hw_7Systems.csproj|solutionrelative:system06_forums\\category_admin_add.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{6D99CF2F-BDDC-4D82-8B7E-8582BBEA7ACD}|260311_hw_7Systems.csproj|c:\\users\\jlsjo\\documents\\rocketcamp\\webform\\260311_hw_7systems\\system02_photoalbums\\album_add_cover.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{6D99CF2F-BDDC-4D82-8B7E-8582BBEA7ACD}|260311_hw_7Systems.csproj|solutionrelative:system02_photoalbums\\album_add_cover.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6D99CF2F-BDDC-4D82-8B7E-8582BBEA7ACD}|260311_hw_7Systems.csproj|c:\\users\\jlsjo\\documents\\rocketcamp\\webform\\260311_hw_7systems\\system06_forums\\category_admin.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6D99CF2F-BDDC-4D82-8B7E-8582BBEA7ACD}|260311_hw_7Systems.csproj|solutionrelative:system06_forums\\category_admin.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6D99CF2F-BDDC-4D82-8B7E-8582BBEA7ACD}|260311_hw_7Systems.csproj|c:\\users\\jlsjo\\documents\\rocketcamp\\webform\\260311_hw_7systems\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{6D99CF2F-BDDC-4D82-8B7E-8582BBEA7ACD}|260311_hw_7Systems.csproj|solutionrelative:web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6D99CF2F-BDDC-4D82-8B7E-8582BBEA7ACD}|260311_hw_7Systems.csproj|c:\\users\\jlsjo\\documents\\rocketcamp\\webform\\260311_hw_7systems\\system06_forums\\category_admin_add.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6D99CF2F-BDDC-4D82-8B7E-8582BBEA7ACD}|260311_hw_7Systems.csproj|solutionrelative:system06_forums\\category_admin_add.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6D99CF2F-BDDC-4D82-8B7E-8582BBEA7ACD}|260311_hw_7Systems.csproj|c:\\users\\jlsjo\\documents\\rocketcamp\\webform\\260311_hw_7systems\\system02_photoalbums\\photo_add_desc.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{6D99CF2F-BDDC-4D82-8B7E-8582BBEA7ACD}|260311_hw_7Systems.csproj|solutionrelative:system02_photoalbums\\photo_add_desc.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6D99CF2F-BDDC-4D82-8B7E-8582BBEA7ACD}|260311_hw_7Systems.csproj|C:\\Users\\jlsjo\\Documents\\RocketCamp\\Webform\\260311_hw_7Systems\\site.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
@@ -30,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
@@ -48,54 +48,54 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Category_Admin_Add.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\jlsjo\\Documents\\RocketCamp\\Webform\\260311_hw_7Systems\\System06_Forums\\Category_Admin_Add.aspx.cs",
-              "RelativeDocumentMoniker": "System06_Forums\\Category_Admin_Add.aspx.cs",
-              "ToolTip": "C:\\Users\\jlsjo\\Documents\\RocketCamp\\Webform\\260311_hw_7Systems\\System06_Forums\\Category_Admin_Add.aspx.cs",
-              "RelativeToolTip": "System06_Forums\\Category_Admin_Add.aspx.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAYwDQAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-23T09:19:30.366Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Category_Admin.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\jlsjo\\Documents\\RocketCamp\\Webform\\260311_hw_7Systems\\System06_Forums\\Category_Admin.aspx.cs",
-              "RelativeDocumentMoniker": "System06_Forums\\Category_Admin.aspx.cs",
-              "ToolTip": "C:\\Users\\jlsjo\\Documents\\RocketCamp\\Webform\\260311_hw_7Systems\\System06_Forums\\Category_Admin.aspx.cs",
-              "RelativeToolTip": "System06_Forums\\Category_Admin.aspx.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-23T09:14:58.747Z",
+              "Title": "Web.config",
+              "DocumentMoniker": "C:\\Users\\jlsjo\\Documents\\RocketCamp\\Webform\\260311_hw_7Systems\\Web.config",
+              "RelativeDocumentMoniker": "Web.config",
+              "ToolTip": "C:\\Users\\jlsjo\\Documents\\RocketCamp\\Webform\\260311_hw_7Systems\\Web.config",
+              "RelativeToolTip": "Web.config",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAADgAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2026-03-24T03:50:07.793Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Category_Admin_Add.aspx",
-              "DocumentMoniker": "C:\\Users\\jlsjo\\Documents\\RocketCamp\\Webform\\260311_hw_7Systems\\System06_Forums\\Category_Admin_Add.aspx",
-              "RelativeDocumentMoniker": "System06_Forums\\Category_Admin_Add.aspx",
-              "ToolTip": "C:\\Users\\jlsjo\\Documents\\RocketCamp\\Webform\\260311_hw_7Systems\\System06_Forums\\Category_Admin_Add.aspx",
-              "RelativeToolTip": "System06_Forums\\Category_Admin_Add.aspx",
+              "Title": "Album_Add_Cover.aspx",
+              "DocumentMoniker": "C:\\Users\\jlsjo\\Documents\\RocketCamp\\Webform\\260311_hw_7Systems\\System02_PhotoAlbums\\Album_Add_Cover.aspx",
+              "RelativeDocumentMoniker": "System02_PhotoAlbums\\Album_Add_Cover.aspx",
+              "ToolTip": "C:\\Users\\jlsjo\\Documents\\RocketCamp\\Webform\\260311_hw_7Systems\\System02_PhotoAlbums\\Album_Add_Cover.aspx",
+              "RelativeToolTip": "System02_PhotoAlbums\\Album_Add_Cover.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2026-03-23T09:07:04.151Z",
+              "WhenOpened": "2026-03-24T03:42:38.924Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Category_Admin.aspx",
-              "DocumentMoniker": "C:\\Users\\jlsjo\\Documents\\RocketCamp\\Webform\\260311_hw_7Systems\\System06_Forums\\Category_Admin.aspx",
-              "RelativeDocumentMoniker": "System06_Forums\\Category_Admin.aspx",
-              "ToolTip": "C:\\Users\\jlsjo\\Documents\\RocketCamp\\Webform\\260311_hw_7Systems\\System06_Forums\\Category_Admin.aspx",
-              "RelativeToolTip": "System06_Forums\\Category_Admin.aspx",
+              "Title": "Photo_Add_Desc.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\jlsjo\\Documents\\RocketCamp\\Webform\\260311_hw_7Systems\\System02_PhotoAlbums\\Photo_Add_Desc.aspx.cs",
+              "RelativeDocumentMoniker": "System02_PhotoAlbums\\Photo_Add_Desc.aspx.cs",
+              "ToolTip": "C:\\Users\\jlsjo\\Documents\\RocketCamp\\Webform\\260311_hw_7Systems\\System02_PhotoAlbums\\Photo_Add_Desc.aspx.cs",
+              "RelativeToolTip": "System02_PhotoAlbums\\Photo_Add_Desc.aspx.cs",
+              "ViewState": "AgIAAJAAAAAAAAAAAAAAAJUAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T02:57:26.334Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Photo_Add_Desc.aspx",
+              "DocumentMoniker": "C:\\Users\\jlsjo\\Documents\\RocketCamp\\Webform\\260311_hw_7Systems\\System02_PhotoAlbums\\Photo_Add_Desc.aspx",
+              "RelativeDocumentMoniker": "System02_PhotoAlbums\\Photo_Add_Desc.aspx",
+              "ToolTip": "C:\\Users\\jlsjo\\Documents\\RocketCamp\\Webform\\260311_hw_7Systems\\System02_PhotoAlbums\\Photo_Add_Desc.aspx",
+              "RelativeToolTip": "System02_PhotoAlbums\\Photo_Add_Desc.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2026-03-23T08:58:09.041Z",
+              "WhenOpened": "2026-03-24T02:53:14.374Z",
               "EditorCaption": ""
             },
             {

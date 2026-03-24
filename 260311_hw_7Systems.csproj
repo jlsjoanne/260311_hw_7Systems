@@ -108,6 +108,10 @@
     <Content Include="App_Data\News_log.ldf">
       <DependentUpon>News.mdf</DependentUpon>
     </Content>
+    <Content Include="App_Data\PhtotAlbumDB.mdf" />
+    <Content Include="App_Data\PhtotAlbumDB_log.ldf">
+      <DependentUpon>PhtotAlbumDB.mdf</DependentUpon>
+    </Content>
     <Content Include="App_Data\User.mdf" />
     <Content Include="App_Data\User_log.ldf">
       <DependentUpon>User.mdf</DependentUpon>
@@ -197,6 +201,11 @@
     <Content Include="System01_News\News_Edit.aspx" />
     <Content Include="System01_News\News_Edit_Img_Select.aspx" />
     <Content Include="System01_News\News_List.aspx" />
+    <Content Include="System02_PhotoAlbums\AlbumList.aspx" />
+    <Content Include="System02_PhotoAlbums\Album_Add.aspx" />
+    <Content Include="System02_PhotoAlbums\Album_Add_Cover.aspx" />
+    <Content Include="System02_PhotoAlbums\Photo_Add.aspx" />
+    <Content Include="System02_PhotoAlbums\Photo_Add_Desc.aspx" />
     <Content Include="System06_Forums\Article.aspx" />
     <Content Include="System06_Forums\ArticleList.aspx" />
     <Content Include="System06_Forums\Article_Add.aspx" />
@@ -316,6 +325,41 @@
     </Compile>
     <Compile Include="System01_News\News_List.aspx.designer.cs">
       <DependentUpon>News_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="System02_PhotoAlbums\AlbumList.aspx.cs">
+      <DependentUpon>AlbumList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="System02_PhotoAlbums\AlbumList.aspx.designer.cs">
+      <DependentUpon>AlbumList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="System02_PhotoAlbums\Album_Add.aspx.cs">
+      <DependentUpon>Album_Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="System02_PhotoAlbums\Album_Add.aspx.designer.cs">
+      <DependentUpon>Album_Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="System02_PhotoAlbums\Album_Add_Cover.aspx.cs">
+      <DependentUpon>Album_Add_Cover.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="System02_PhotoAlbums\Album_Add_Cover.aspx.designer.cs">
+      <DependentUpon>Album_Add_Cover.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="System02_PhotoAlbums\Photo_Add.aspx.cs">
+      <DependentUpon>Photo_Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="System02_PhotoAlbums\Photo_Add.aspx.designer.cs">
+      <DependentUpon>Photo_Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="System02_PhotoAlbums\Photo_Add_Desc.aspx.cs">
+      <DependentUpon>Photo_Add_Desc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="System02_PhotoAlbums\Photo_Add_Desc.aspx.designer.cs">
+      <DependentUpon>Photo_Add_Desc.aspx</DependentUpon>
     </Compile>
     <Compile Include="System06_Forums\Article.aspx.cs">
       <DependentUpon>Article.aspx</DependentUpon>
