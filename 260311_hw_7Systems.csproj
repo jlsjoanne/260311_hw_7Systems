@@ -100,6 +100,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="App_Data\Files.mdf" />
+    <Content Include="App_Data\Files_log.ldf">
+      <DependentUpon>Files.mdf</DependentUpon>
+    </Content>
     <Content Include="App_Data\Forum.mdf" />
     <Content Include="App_Data\Forum_log.ldf">
       <DependentUpon>Forum.mdf</DependentUpon>
@@ -208,6 +212,8 @@
     <Content Include="System02_PhotoAlbums\Photo.aspx" />
     <Content Include="System02_PhotoAlbums\Photo_Add.aspx" />
     <Content Include="System02_PhotoAlbums\Photo_Add_Desc.aspx" />
+    <Content Include="System03_File\FileList.aspx" />
+    <Content Include="System03_File\File_Add.aspx" />
     <Content Include="System06_Forums\Article.aspx" />
     <Content Include="System06_Forums\ArticleList.aspx" />
     <Content Include="System06_Forums\Article_Add.aspx" />
@@ -376,6 +382,20 @@
     </Compile>
     <Compile Include="System02_PhotoAlbums\Photo_Add_Desc.aspx.designer.cs">
       <DependentUpon>Photo_Add_Desc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="System03_File\FileList.aspx.cs">
+      <DependentUpon>FileList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="System03_File\FileList.aspx.designer.cs">
+      <DependentUpon>FileList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="System03_File\File_Add.aspx.cs">
+      <DependentUpon>File_Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="System03_File\File_Add.aspx.designer.cs">
+      <DependentUpon>File_Add.aspx</DependentUpon>
     </Compile>
     <Compile Include="System06_Forums\Article.aspx.cs">
       <DependentUpon>Article.aspx</DependentUpon>
