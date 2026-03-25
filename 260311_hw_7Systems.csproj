@@ -100,6 +100,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="App_Data\Advertisement.mdf" />
+    <Content Include="App_Data\Advertisement_log.ldf">
+      <DependentUpon>Advertisement.mdf</DependentUpon>
+    </Content>
     <Content Include="App_Data\Files.mdf" />
     <Content Include="App_Data\Files_log.ldf">
       <DependentUpon>Files.mdf</DependentUpon>
@@ -119,6 +123,10 @@
     <Content Include="App_Data\User.mdf" />
     <Content Include="App_Data\User_log.ldf">
       <DependentUpon>User.mdf</DependentUpon>
+    </Content>
+    <Content Include="App_Data\Videos.mdf" />
+    <Content Include="App_Data\Videos_log.ldf">
+      <DependentUpon>Videos.mdf</DependentUpon>
     </Content>
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
@@ -214,6 +222,10 @@
     <Content Include="System02_PhotoAlbums\Photo_Add_Desc.aspx" />
     <Content Include="System03_File\FileList.aspx" />
     <Content Include="System03_File\File_Add.aspx" />
+    <Content Include="System04_Ads\AdsList.aspx" />
+    <Content Include="System04_Ads\Ads_Add.aspx" />
+    <Content Include="System05_Video\VideoList.aspx" />
+    <Content Include="System05_Video\Video_Add.aspx" />
     <Content Include="System06_Forums\Article.aspx" />
     <Content Include="System06_Forums\ArticleList.aspx" />
     <Content Include="System06_Forums\Article_Add.aspx" />
@@ -396,6 +408,34 @@
     </Compile>
     <Compile Include="System03_File\File_Add.aspx.designer.cs">
       <DependentUpon>File_Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="System04_Ads\AdsList.aspx.cs">
+      <DependentUpon>AdsList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="System04_Ads\AdsList.aspx.designer.cs">
+      <DependentUpon>AdsList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="System04_Ads\Ads_Add.aspx.cs">
+      <DependentUpon>Ads_Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="System04_Ads\Ads_Add.aspx.designer.cs">
+      <DependentUpon>Ads_Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="System05_Video\VideoList.aspx.cs">
+      <DependentUpon>VideoList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="System05_Video\VideoList.aspx.designer.cs">
+      <DependentUpon>VideoList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="System05_Video\Video_Add.aspx.cs">
+      <DependentUpon>Video_Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="System05_Video\Video_Add.aspx.designer.cs">
+      <DependentUpon>Video_Add.aspx</DependentUpon>
     </Compile>
     <Compile Include="System06_Forums\Article.aspx.cs">
       <DependentUpon>Article.aspx</DependentUpon>
