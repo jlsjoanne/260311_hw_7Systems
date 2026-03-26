@@ -42,22 +42,13 @@ namespace _260311_hw_7Systems.System05_Video
         protected global::System.Web.UI.WebControls.TextBox VideoName;
 
         /// <summary>
-        /// VideoUrl control.
+        /// VideoId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox VideoUrl;
-
-        /// <summary>
-        /// VideoImg control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload VideoImg;
+        protected global::System.Web.UI.WebControls.TextBox VideoId;
 
         /// <summary>
         /// Submit control.

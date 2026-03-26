@@ -37,30 +37,15 @@ namespace _260311_hw_7Systems.System05_Video
 
         private void InsertVideoData()
         {
-            //img upload
-            string folderPath = Server.MapPath("~/Images/");
-            string fileName = "";
-            if (VideoImg.HasFile)
-            {
-                fileName = Guid.NewGuid().ToString() + Path.GetExtension(VideoImg.FileName);
-                VideoImg.SaveAs(Path.Combine(folderPath, fileName));
-            }
-            else
-            {
-                Response.Write("<script>alert('無影片縮圖')</script>");
-                return;
-            }
-            
             string connectionString = WebConfigurationManager.ConnectionStrings["VideoDB"].ConnectionString;
-            string insertDataQuery = "INSERT INTO VideoData (VideoName, VideoUrl, VideoImg, CategoryId) VALUES (@VideoName, @VideoUrl, @VideoImg, @CategoryId)";
+            string insertDataQuery = "INSERT INTO YTVideo (VideoId, VideoName, CategoryId) VALUES (@VideoId, @VideoName, @CategoryId)";
 
             using(SqlConnection conn = new SqlConnection(connectionString))
             {
                 using(SqlCommand command = new SqlCommand(insertDataQuery, conn))
                 {
+                    command.Parameters.AddWithValue("@VideoId", VideoId.Text);
                     command.Parameters.AddWithValue("@VideoName", VideoName.Text);
-                    command.Parameters.AddWithValue("@VideoUrl", VideoUrl.Text);
-                    command.Parameters.AddWithValue("@VideoImg", Path.Combine(folderPath, fileName));
                     command.Parameters.AddWithValue("@CategoryId", CategoryDropDown.SelectedValue);
 
                     try

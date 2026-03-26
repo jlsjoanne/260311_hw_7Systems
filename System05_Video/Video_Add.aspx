@@ -15,13 +15,8 @@
         </div>
         <br />
         <div>
-            <p><b>影片連結</b></p>
-            <asp:TextBox ID="VideoUrl" runat="server" Width="100%"></asp:TextBox>
-        </div>
-        <br />
-        <div>
-            <p><b>縮圖</b></p>
-            <asp:FileUpload ID="VideoImg" runat="server" />
+            <p><b>Youtube影片ID</b></p>
+            <asp:TextBox ID="VideoId" runat="server" Width="100%"></asp:TextBox>
         </div>
         <br />
         <div>
