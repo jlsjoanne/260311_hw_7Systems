@@ -104,6 +104,10 @@
     <Content Include="App_Data\Advertisement_log.ldf">
       <DependentUpon>Advertisement.mdf</DependentUpon>
     </Content>
+    <Content Include="App_Data\Database1.mdf" />
+    <Content Include="App_Data\Database1_log.ldf">
+      <DependentUpon>Database1.mdf</DependentUpon>
+    </Content>
     <Content Include="App_Data\Files.mdf" />
     <Content Include="App_Data\Files_log.ldf">
       <DependentUpon>Files.mdf</DependentUpon>

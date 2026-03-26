@@ -65,16 +65,16 @@ namespace _260311_hw_7Systems.System05_Video
         {
             string categoryId = DataBinder.Eval(e.Item.DataItem, "CategoryId").ToString();
 
-            ListView videoList = (ListView)e.Item.FindControl("YTList");
+            Repeater childRepeater = (Repeater)e.Item.FindControl("YtRepeater");
 
-            videoList.DataSource = BindVideoData(categoryId);
-            videoList.DataBind();
+            childRepeater.DataSource = BindVideoData(categoryId);
+            childRepeater.DataBind();
         }
 
         protected DataTable BindVideoData(string categoryId)
         {
             string connectionString = WebConfigurationManager.ConnectionStrings["VideoDB"].ConnectionString;
-            string getVideoQuery = "SELECT * FROM YTVideo WHERE CategoryId = @CategoryId ORDER BY C";
+            string getVideoQuery = "SELECT * FROM [YTVideo] WHERE CategoryId = @CategoryId ORDER BY UploadOrder ASC";
 
             using(SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -114,7 +114,7 @@ namespace _260311_hw_7Systems.System05_Video
             return "https://img.youtube.com/vi/" + ytId + "/sddefault.jpg";
         }
 
-        protected void YTList_ItemCommand(object sender, ListViewCommandEventArgs e)
+        protected void YTList_ItemCommand(object sender, RepeaterCommandEventArgs e)
         {
             if(e.CommandName == "ToYt")
             {
@@ -122,5 +122,7 @@ namespace _260311_hw_7Systems.System05_Video
                 Response.Redirect(ytUrl);
             }
         }
+
+        
     }
 }
