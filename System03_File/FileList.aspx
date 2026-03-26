@@ -7,6 +7,7 @@
         </div>
         <div>
             <asp:GridView ID="FileGrid" runat="server" DataKeyNames="FileId"
+                AllowPaging="True" PageSize="5" OnPageIndexChanging="FileGridPaging_PageIndexChanging"
                 OnRowCommand="FileGrid_RowCommand" OnRowDeleting="FileGrid_RowDeleting" AutoGenerateColumns="False">
                 <Columns>
                     <asp:CommandField ShowDeleteButton="False" />
