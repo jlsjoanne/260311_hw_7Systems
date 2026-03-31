@@ -13,5 +13,32 @@ namespace _260311_hw_7Systems.System07_ProductMgmt
 
     public partial class BrandMgmt
     {
+
+        /// <summary>
+        /// AddBrand control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button AddBrand;
+
+        /// <summary>
+        /// BrandGrid control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView BrandGrid;
+
+        /// <summary>
+        /// BrandDataSource control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource BrandDataSource;
     }
 }

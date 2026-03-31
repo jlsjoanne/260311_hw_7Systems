@@ -13,5 +13,10 @@ namespace _260311_hw_7Systems.System07_ProductMgmt
         {
 
         }
+
+        protected void AddBrand_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Brand_Add.aspx");
+        }
     }
 }

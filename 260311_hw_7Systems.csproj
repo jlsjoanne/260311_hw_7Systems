@@ -243,6 +243,7 @@
     <Content Include="System07_ProductMgmt\BrandMgmt.aspx" />
     <Content Include="System07_ProductMgmt\Brand_Add.aspx" />
     <Content Include="System07_ProductMgmt\CategoryMgmt.aspx" />
+    <Content Include="System07_ProductMgmt\CategoryMgmt_Sub.aspx" />
     <Content Include="System07_ProductMgmt\Category_AddMain.aspx" />
     <Content Include="System07_ProductMgmt\Category_AddSub.aspx" />
     <Content Include="System07_ProductMgmt\FileMgmt.aspx" />
@@ -543,6 +544,13 @@
     </Compile>
     <Compile Include="System07_ProductMgmt\CategoryMgmt.aspx.designer.cs">
       <DependentUpon>CategoryMgmt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="System07_ProductMgmt\CategoryMgmt_Sub.aspx.cs">
+      <DependentUpon>CategoryMgmt_Sub.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="System07_ProductMgmt\CategoryMgmt_Sub.aspx.designer.cs">
+      <DependentUpon>CategoryMgmt_Sub.aspx</DependentUpon>
     </Compile>
     <Compile Include="System07_ProductMgmt\Category_AddMain.aspx.cs">
       <DependentUpon>Category_AddMain.aspx</DependentUpon>

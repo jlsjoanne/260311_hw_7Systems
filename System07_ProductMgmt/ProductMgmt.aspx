@@ -2,9 +2,39 @@
 
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <main aria-labelledby="title">
-        <h2 id="title"><%: Title %>.</h2>
-        <h3>Your application description page.</h3>
-        <p>Use this area to provide additional information.</p>
+    <main>
+        <h3><b>新增/編輯商品</b></h3>
+        <div id="Category">
+            <b>主類別: &emsp;</b>
+            <asp:DropDownList ID="MainDropDown" runat="server" 
+                OnSelectedIndexChanged="MainDropdown_SelectedIndexChanged"
+                AutoPostBack="True">
+            </asp:DropDownList> 
+            <br />
+            <b>子類別: &emsp;</b>
+            <asp:DropDownList ID="SubDropDown" runat="server">
+                <asp:ListItem Value="0">------</asp:ListItem>
+            </asp:DropDownList>
+        </div>
+        <br />
+        <div id="brand">
+            <b>品牌: &emsp;&emsp;</b>
+            <asp:DropDownList ID="BrandDropdown" runat="server"></asp:DropDownList>
+        </div>
+        <br />
+        <div id="ProductDetails">
+            <b>品名: &emsp;</b>
+            <asp:TextBox ID="ProductName" runat="server"></asp:TextBox>
+            <br />
+            <b>規格: &emsp;</b>
+            <asp:TextBox ID="ProductDetail" runat="server"></asp:TextBox>
+            <br />
+            <b>售價: &emsp;</b>
+            <asp:TextBox ID="UnitPrice" runat="server"></asp:TextBox>
+        </div>
+        <br />
+        <div>
+            <asp:Button ID="Submit" runat="server" Text="送出" OnClick="Submit_Click" />
+        </div>
     </main>
 </asp:Content>

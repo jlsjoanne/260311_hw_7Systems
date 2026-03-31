@@ -49,23 +49,5 @@ namespace _260311_hw_7Systems.System07_ProductMgmt
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource MainCategoryDataSource;
-
-        /// <summary>
-        /// SubCategoryGrid control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView SubCategoryGrid;
-
-        /// <summary>
-        /// SubCategoryDataSource control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SubCategoryDataSource;
     }
 }
