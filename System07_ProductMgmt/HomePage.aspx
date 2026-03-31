@@ -12,6 +12,13 @@
         <br />
         <div>
             <h2>商品管理系統</h2>
+            <b>主類別: &emsp;</b>
+            <asp:DropDownList ID="MainDropDown" runat="server" AutoPostBack="True" OnSelectedIndexChanged="MainDropDown_SelectedIndexChanged"></asp:DropDownList>
+            <br />
+            <b>子類別: &emsp;</b>
+            <asp:DropDownList ID="SubDropDown" runat="server" AutoPostBack="True" OnSelectedIndexChanged="SubDropDown_SelectedIndexChanged"></asp:DropDownList>
+            <br />
+            <asp:GridView ID="ProductGrid" runat="server"></asp:GridView>
         </div>
     </main>
 </asp:Content>
