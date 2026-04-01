@@ -16,9 +16,22 @@
             <asp:DropDownList ID="MainDropDown" runat="server" AutoPostBack="True" OnSelectedIndexChanged="MainDropDown_SelectedIndexChanged"></asp:DropDownList>
             <br />
             <b>子類別: &emsp;</b>
-            <asp:DropDownList ID="SubDropDown" runat="server" AutoPostBack="True" OnSelectedIndexChanged="SubDropDown_SelectedIndexChanged"></asp:DropDownList>
+            <asp:DropDownList ID="SubDropDown" runat="server" AutoPostBack="True" OnSelectedIndexChanged="SubDropDown_SelectedIndexChanged">
+                <asp:ListItem Value="0">------</asp:ListItem>
+
+            </asp:DropDownList>
             <br />
-            <asp:GridView ID="ProductGrid" runat="server"></asp:GridView>
+            <asp:GridView ID="ProductGrid" runat="server" Width="100%"
+                DataKeyNames="ProductId" OnRowDeleting="ProductGrid_RowDeleting" AutoGenerateColumns="False">
+                <Columns>
+                    <asp:CommandField ShowDeleteButton="False" />
+                    <asp:BoundField DataField="MainCategoryName" HeaderText="主類別" />
+                    <asp:BoundField DataField="SubCategoryName" HeaderText="子類別" />
+                    <asp:HyperLinkField DataTextField="ProductName" HeaderText="產品名稱" DataNavigateUrlFields="ProductId" DataNavigateUrlFormatString="Product.aspx?ProductId={0}" />
+                    <asp:BoundField DataField="BrandName" HeaderText="品牌" />
+                    <asp:BoundField DataField="UnitPrice" HeaderText="售價" />
+                </Columns>
+            </asp:GridView>
         </div>
     </main>
 </asp:Content>

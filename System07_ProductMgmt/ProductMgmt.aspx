@@ -27,7 +27,8 @@
             <asp:TextBox ID="ProductName" runat="server"></asp:TextBox>
             <br />
             <b>規格: &emsp;</b>
-            <asp:TextBox ID="ProductDetail" runat="server"></asp:TextBox>
+            <asp:TextBox ID="ProductDetail" runat="server"
+                TextMode="MultiLine" Rows="10"></asp:TextBox>
             <br />
             <b>售價: &emsp;</b>
             <asp:TextBox ID="UnitPrice" runat="server"></asp:TextBox>
