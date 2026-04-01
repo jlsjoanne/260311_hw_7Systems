@@ -167,6 +167,12 @@ namespace _260311_hw_7Systems.System07_ProductMgmt
             }
         }
 
+        protected void ProductGrid_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            ProductGrid.PageIndex = e.NewPageIndex;
+            BindGridData(MainDropDown.SelectedValue, SubDropDown.SelectedValue);
+        }
+
         private void BindGridData(string mainCat="", string subCat = "")
         {
             string connectionString = WebConfigurationManager.ConnectionStrings["ProductDB"].ConnectionString;

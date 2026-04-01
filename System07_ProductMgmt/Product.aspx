@@ -36,12 +36,26 @@
         <br />
         <div ID="Imgs">
             <p><b>圖片 &emsp;</b></p>
-            <asp:Repeater ID="ImgRepeater" runat="server"></asp:Repeater>
+            <asp:Repeater ID="ImgRepeater" runat="server">
+                <ItemTemplate>
+                    <asp:Image ID="Img" runat="server"
+                        ImageUrl='<%# CombinePath("~/Images/", Eval("IPath")) %>'
+                        AlternateText='<%# Eval("IName") %>'
+                        Height="200px"/>
+                </ItemTemplate>
+            </asp:Repeater>
         </div>
         <br />
         <div ID="Files">
             <p><b>檔案 &emsp;</b></p>
-            <asp:Repeater ID="FileRepeater" runat="server"></asp:Repeater>
+            <asp:Repeater ID="FileRepeater" runat="server" OnItemCommand="FileRepeater_ItemCommand">
+                <ItemTemplate>
+                    <asp:LinkButton ID="RelatedFile" runat="server"
+                        Text='<%# Eval("FName") %>'
+                        CommandName="Download"
+                        CommandArgument='<%# CombinePath("~/Files/", Eval("FPath")) %>' ></asp:LinkButton>
+                </ItemTemplate>
+            </asp:Repeater>
         </div>
     </main>
 </asp:Content>

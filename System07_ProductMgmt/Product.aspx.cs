@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Configuration;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data;
-using System.Data.SqlClient;
 
 namespace _260311_hw_7Systems.System07_ProductMgmt
 {
@@ -24,6 +25,8 @@ namespace _260311_hw_7Systems.System07_ProductMgmt
                 }
                 string productId = Request.QueryString["ProductId"].ToString();
                 GetProductInfo(productId);
+                GetImageData(productId);
+                GetFileData(productId);
 
             }
             else if (Request.UrlReferrer != null)
@@ -96,6 +99,107 @@ namespace _260311_hw_7Systems.System07_ProductMgmt
                         dr.Close();
                         conn.Close();
                     }
+                }
+            }
+        }
+
+        private void GetImageData(string productId)
+        {
+            string connectionString = WebConfigurationManager.ConnectionStrings["ProductDB"].ConnectionString;
+            string getImgQuery = "SELECT * FROM [Images] WHERE ProductId = @ProductId";
+
+            using(SqlConnection conn = new SqlConnection(connectionString))
+            {
+                using(SqlCommand command = new SqlCommand(getImgQuery, conn))
+                {
+                    command.Parameters.AddWithValue("@ProductId", productId);
+
+                    try
+                    {
+                        conn.Open();
+                        SqlDataAdapter da = new SqlDataAdapter(command);
+                        DataTable dt = new DataTable();
+                        da.Fill(dt);
+
+                        ImgRepeater.DataSource = dt;
+                        ImgRepeater.DataBind();
+                    }
+                    catch (Exception ex)
+                    {
+                        Response.Write($"<script>alert('{ex.Message}')</script>");
+                    }
+                    finally
+                    {
+                        conn.Close();
+                    }
+                }
+            }
+        }
+
+        private void GetFileData(string productId)
+        {
+            string connectionString = WebConfigurationManager.ConnectionStrings["ProductDB"].ConnectionString;
+            string getFileQuery = "SELECT * FROM [Files] WHERE ProductId = @ProductId";
+
+            using(SqlConnection conn = new SqlConnection(connectionString))
+            {
+                using(SqlCommand command = new SqlCommand(getFileQuery, conn))
+                {
+                    command.Parameters.AddWithValue("@ProductId", productId);
+
+                    try
+                    {
+                        conn.Open();
+                        SqlDataAdapter da = new SqlDataAdapter(command);
+                        DataTable dt = new DataTable();
+                        da.Fill(dt);
+
+                        FileRepeater.DataSource = dt;
+                        FileRepeater.DataBind();
+                    }
+                    catch (Exception ex)
+                    {
+                        Response.Write($"<script>alert('{ex.Message}')</script>");
+                    }
+                    finally
+                    {
+                        conn.Close();
+                    }
+                }
+            }
+        }
+
+        protected string CombinePath(object folder, object file)
+        {
+            string folderPath = folder?.ToString() ?? String.Empty;
+            string filePath = file?.ToString() ?? String.Empty;
+            string filename = Path.GetFileName(filePath);
+
+            return Path.Combine(folderPath, filename);
+        }
+
+        protected void FileRepeater_ItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+            if(e.CommandName == "Download")
+            {
+                string filePath = e.CommandArgument.ToString();
+                string physicalPath = Server.MapPath(filePath);
+
+                FileInfo file = new FileInfo(physicalPath);
+
+                if (file.Exists)
+                {
+                    Response.Clear();
+                    Response.AddHeader("Content-Disposition", "attachment; filename=" + file.Name);
+                    Response.AddHeader("Content-Length", file.Length.ToString());
+                    Response.ContentType = "application/octet-stream";
+                    Response.WriteFile(file.FullName);
+                    Response.Flush();
+                    Response.End();
+                }
+                else
+                {
+                    Response.Write("<script>alert('檔案不存在')</script>");
                 }
             }
         }

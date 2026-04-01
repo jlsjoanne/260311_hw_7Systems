@@ -2,9 +2,29 @@
 
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <main aria-labelledby="title">
-        <h2 id="title"><%: Title %>.</h2>
-        <h3>Your application description page.</h3>
-        <p>Use this area to provide additional information.</p>
+    <main>
+        <div>
+            <asp:Button ID="AddNew" runat="server" Text="新增圖片" OnClick="AddNew_Click" Visible="False" />
+        </div>
+        <br />
+        <div>
+            <p><b>圖片管理</b></p>
+            <asp:GridView ID="ImgGrid" runat="server" 
+                AutoGenerateColumns="False" DataKeyNames="ImageId"
+                OnRowDeleting="ImgGrid_RowDeleting">
+                <Columns>
+                    <asp:CommandField ShowDeleteButton="False" />
+                    <asp:BoundField DataField="IName" HeaderText="圖片名稱" />
+                    <asp:BoundField DataField="IDesc" HeaderText="圖片描述" />
+                    <asp:TemplateField HeaderText="圖片">
+                        <ItemTemplate>
+                            <asp:Image ID="Img" runat="server" 
+                                ImageUrl='<%# CombineImgPath("~/Images/",Eval("IPath")) %>'
+                                Width="100%" Height="200px"/>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                </Columns>
+            </asp:GridView>
+        </div>
     </main>
 </asp:Content>

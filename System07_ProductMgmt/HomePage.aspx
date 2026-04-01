@@ -22,7 +22,8 @@
             </asp:DropDownList>
             <br />
             <asp:GridView ID="ProductGrid" runat="server" Width="100%"
-                DataKeyNames="ProductId" OnRowDeleting="ProductGrid_RowDeleting" AutoGenerateColumns="False">
+                DataKeyNames="ProductId" OnRowDeleting="ProductGrid_RowDeleting" AutoGenerateColumns="False"
+                AllowPaging="True" PageSize="10" OnPageIndexChanging="ProductGrid_PageIndexChanging">
                 <Columns>
                     <asp:CommandField ShowDeleteButton="False" />
                     <asp:BoundField DataField="MainCategoryName" HeaderText="主類別" />
