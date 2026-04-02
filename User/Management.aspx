@@ -8,9 +8,20 @@
             
             <asp:GridView ID="GridView1" runat="server" 
                 DataKeyNames="UserName" 
-                DataSourceID="SqlDataSource1">
+                DataSourceID="SqlDataSource1" AutoGenerateColumns="False">
                 <Columns>
                     <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
+                    <asp:BoundField DataField="UserName" HeaderText="使用者名稱" />
+                    <asp:TemplateField HeaderText="密碼">
+                        <ItemTemplate>
+                            <asp:Label ID="LabelPwd" runat="server" Text="*******"></asp:Label>
+                        </ItemTemplate>
+                        <EditItemTemplate>
+                            <asp:TextBox ID="TextBoxPwd" runat="server"
+                                TextMode="Password" Text='<%# Bind("PassWord") %>' ></asp:TextBox>
+                        </EditItemTemplate>
+                    </asp:TemplateField>
+                    <asp:BoundField DataField="RoleId" HeaderText="權限編號" />
                 </Columns>
             </asp:GridView>
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
