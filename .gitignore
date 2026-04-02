@@ -15,3 +15,4 @@
 .vscode/settings.json
 App_Data/User.mdf
 App_Data/User_log.ldf
+/obj/*
