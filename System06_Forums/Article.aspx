@@ -14,7 +14,10 @@
         <br />
         <br />
         <div>
-            <p>留言</p>
+            <p>留言(
+                <asp:Label ID="CommentCount" runat="server"></asp:Label>
+                )
+            </p>
             <asp:Button ID="AddComment" runat="server" Text="新增留言" OnClick="AddComment_Click" Visible="False"/>
             <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False">
                 <Columns>
