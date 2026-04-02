@@ -7,7 +7,7 @@
       "RelativeMoniker": "D:0:0:{6D99CF2F-BDDC-4D82-8B7E-8582BBEA7ACD}|260311_hw_7Systems.csproj|solutionrelative:system07_productmgmt\\product.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6D99CF2F-BDDC-4D82-8B7E-8582BBEA7ACD}|260311_hw_7Systems.csproj|c:\\users\\jlsjo\\documents\\rocketcamp\\webform\\260311_hw_7systems\\system07_productmgmt\\product.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6D99CF2F-BDDC-4D82-8B7E-8582BBEA7ACD}|260311_hw_7Systems.csproj|C:\\Users\\jlsjo\\Documents\\RocketCamp\\Webform\\260311_hw_7Systems\\system07_productmgmt\\product.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6D99CF2F-BDDC-4D82-8B7E-8582BBEA7ACD}|260311_hw_7Systems.csproj|solutionrelative:system07_productmgmt\\product.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -22,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
@@ -37,6 +37,22 @@
               "WhenOpened": "2026-03-11T05:38:31.649Z",
               "IsPinned": true,
               "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:2:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:3:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
             },
             {
               "$type": "Document",
@@ -59,26 +75,10 @@
               "RelativeDocumentMoniker": "System07_ProductMgmt\\Product.aspx.cs",
               "ToolTip": "C:\\Users\\jlsjo\\Documents\\RocketCamp\\Webform\\260311_hw_7Systems\\System07_ProductMgmt\\Product.aspx.cs",
               "RelativeToolTip": "System07_ProductMgmt\\Product.aspx.cs",
-              "ViewState": "AgIAALIAAAAAAAAAAAAIwMkAAAA4AAAAAAAAAA==",
+              "ViewState": "AgIAALsAAAAAAAAAAAAIwMkAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-01T09:06:49.637Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:2:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:3:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
             }
           ]
         }
