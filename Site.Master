@@ -54,6 +54,7 @@
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/System03_File/FileList">檔案下載系統</a></li>
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/System04_Ads/AdsList">廣告連結</a></li>
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/System05_Video/VideoList">影音專區</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/System07_ProductMgmt/HomePage">商品管理系統</a></li>
                     </ul>
                 </div>
             </div>

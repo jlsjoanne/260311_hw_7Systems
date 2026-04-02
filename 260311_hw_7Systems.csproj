@@ -104,10 +104,6 @@
     <Content Include="App_Data\Advertisement_log.ldf">
       <DependentUpon>Advertisement.mdf</DependentUpon>
     </Content>
-    <Content Include="App_Data\Database1.mdf" />
-    <Content Include="App_Data\Database1_log.ldf">
-      <DependentUpon>Database1.mdf</DependentUpon>
-    </Content>
     <Content Include="App_Data\Files.mdf" />
     <Content Include="App_Data\Files_log.ldf">
       <DependentUpon>Files.mdf</DependentUpon>
@@ -123,6 +119,10 @@
     <Content Include="App_Data\PhotoAlbumDB.mdf" />
     <Content Include="App_Data\PhotoAlbumDB_log.ldf">
       <DependentUpon>PhotoAlbumDB.mdf</DependentUpon>
+    </Content>
+    <Content Include="App_Data\ProductMgmt.mdf" />
+    <Content Include="App_Data\ProductMgmt_log.ldf">
+      <DependentUpon>ProductMgmt.mdf</DependentUpon>
     </Content>
     <Content Include="App_Data\User.mdf" />
     <Content Include="App_Data\User_log.ldf">
@@ -240,6 +240,19 @@
     <Content Include="System06_Forums\Category_Admin.aspx" />
     <Content Include="System06_Forums\Category_Admin_Add.aspx" />
     <Content Include="System06_Forums\Comment_Add.aspx" />
+    <Content Include="System07_ProductMgmt\BrandMgmt.aspx" />
+    <Content Include="System07_ProductMgmt\Brand_Add.aspx" />
+    <Content Include="System07_ProductMgmt\CategoryMgmt.aspx" />
+    <Content Include="System07_ProductMgmt\CategoryMgmt_Sub.aspx" />
+    <Content Include="System07_ProductMgmt\Category_AddMain.aspx" />
+    <Content Include="System07_ProductMgmt\Category_AddSub.aspx" />
+    <Content Include="System07_ProductMgmt\FileMgmt.aspx" />
+    <Content Include="System07_ProductMgmt\File_Add.aspx" />
+    <Content Include="System07_ProductMgmt\HomePage.aspx" />
+    <Content Include="System07_ProductMgmt\ImageMgmt.aspx" />
+    <Content Include="System07_ProductMgmt\Image_Add.aspx" />
+    <Content Include="System07_ProductMgmt\Product.aspx" />
+    <Content Include="System07_ProductMgmt\ProductMgmt.aspx" />
     <Content Include="User\LogIn.aspx" />
     <Content Include="User\Management.aspx" />
     <Content Include="User\Setting.aspx" />
@@ -510,6 +523,97 @@
     </Compile>
     <Compile Include="System06_Forums\Comment_Add.aspx.designer.cs">
       <DependentUpon>Comment_Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="System07_ProductMgmt\BrandMgmt.aspx.cs">
+      <DependentUpon>BrandMgmt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="System07_ProductMgmt\BrandMgmt.aspx.designer.cs">
+      <DependentUpon>BrandMgmt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="System07_ProductMgmt\Brand_Add.aspx.cs">
+      <DependentUpon>Brand_Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="System07_ProductMgmt\Brand_Add.aspx.designer.cs">
+      <DependentUpon>Brand_Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="System07_ProductMgmt\CategoryMgmt.aspx.cs">
+      <DependentUpon>CategoryMgmt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="System07_ProductMgmt\CategoryMgmt.aspx.designer.cs">
+      <DependentUpon>CategoryMgmt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="System07_ProductMgmt\CategoryMgmt_Sub.aspx.cs">
+      <DependentUpon>CategoryMgmt_Sub.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="System07_ProductMgmt\CategoryMgmt_Sub.aspx.designer.cs">
+      <DependentUpon>CategoryMgmt_Sub.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="System07_ProductMgmt\Category_AddMain.aspx.cs">
+      <DependentUpon>Category_AddMain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="System07_ProductMgmt\Category_AddMain.aspx.designer.cs">
+      <DependentUpon>Category_AddMain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="System07_ProductMgmt\Category_AddSub.aspx.cs">
+      <DependentUpon>Category_AddSub.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="System07_ProductMgmt\Category_AddSub.aspx.designer.cs">
+      <DependentUpon>Category_AddSub.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="System07_ProductMgmt\FileMgmt.aspx.cs">
+      <DependentUpon>FileMgmt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="System07_ProductMgmt\FileMgmt.aspx.designer.cs">
+      <DependentUpon>FileMgmt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="System07_ProductMgmt\File_Add.aspx.cs">
+      <DependentUpon>File_Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="System07_ProductMgmt\File_Add.aspx.designer.cs">
+      <DependentUpon>File_Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="System07_ProductMgmt\HomePage.aspx.cs">
+      <DependentUpon>HomePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="System07_ProductMgmt\HomePage.aspx.designer.cs">
+      <DependentUpon>HomePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="System07_ProductMgmt\ImageMgmt.aspx.cs">
+      <DependentUpon>ImageMgmt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="System07_ProductMgmt\ImageMgmt.aspx.designer.cs">
+      <DependentUpon>ImageMgmt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="System07_ProductMgmt\Image_Add.aspx.cs">
+      <DependentUpon>Image_Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="System07_ProductMgmt\Image_Add.aspx.designer.cs">
+      <DependentUpon>Image_Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="System07_ProductMgmt\Product.aspx.cs">
+      <DependentUpon>Product.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="System07_ProductMgmt\Product.aspx.designer.cs">
+      <DependentUpon>Product.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="System07_ProductMgmt\ProductMgmt.aspx.cs">
+      <DependentUpon>ProductMgmt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="System07_ProductMgmt\ProductMgmt.aspx.designer.cs">
+      <DependentUpon>ProductMgmt.aspx</DependentUpon>
     </Compile>
     <Compile Include="User\LogIn.aspx.cs">
       <DependentUpon>LogIn.aspx</DependentUpon>
