@@ -11,17 +11,10 @@ namespace _260311_hw_7Systems.System01_News
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
             if (Session["RoleId"] != null && (Session["RoleId"].ToString() == "1" || Session["RoleId"].ToString() == "2"))
             {
                 AddNew.Visible = true;
-                if (GridView1.Columns[0] is CommandField commandField)
-                {
-                    commandField.ShowDeleteButton = true;
-                }
-                if (GridView1.Columns[1] is HyperLinkField linkField)
-                {
-                    linkField.Visible = true;
-                }
             }
         }
 

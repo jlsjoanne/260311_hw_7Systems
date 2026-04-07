@@ -2,6 +2,9 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <main>
+        <div>
+
+        </div>
         <h3>標題</h3>
         <h4><asp:Label ID="NewsTitle" runat="server"></asp:Label></h4>
         <br />
