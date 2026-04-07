@@ -19,8 +19,11 @@
                 )
             </p>
             <asp:Button ID="AddComment" runat="server" Text="新增留言" OnClick="AddComment_Click" Visible="False"/>
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False">
+            <br />
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False"
+                OnRowDeleting="GridView1_RowDeleting">
                 <Columns>
+                    <asp:CommandField ShowDeleteButton="False" />
                     <asp:BoundField DataField="Username" HeaderText="帳號">
                         <ItemStyle Width="100px" />
                     </asp:BoundField>
