@@ -17,12 +17,23 @@ namespace _260311_hw_7Systems.System01_News
         {
             if (Request.QueryString["NewsId"] != null)
             {
-                
+                if (Session["RoleId"] != null && (Session["RoleId"].ToString() == "1" || Session["RoleId"].ToString() == "2"))
+                {
+                    NewsEdit.Visible = true;
+                    ImgMgmt.Visible = true;
+                    FileMgmt.Visible = true;
+                    LinkMgmt.Visible = true;
+                    Publish.Visible = true;
+                }
                 string newsId = Request.QueryString["NewsId"].ToString();
-                GetNewsData(newsId);
-                GetImgData(newsId);
-                GetFileData(newsId);
-                GetLinkData(newsId);
+                if (!IsPostBack)
+                {
+                    GetNewsData(newsId);
+                    GetImgData(newsId);
+                    GetFileData(newsId);
+                    GetLinkData(newsId);
+                }
+                
             }
             else if(Request.UrlReferrer != null)
             {
@@ -244,6 +255,61 @@ namespace _260311_hw_7Systems.System01_News
             }
         }
 
+        protected void Publish_Click(object sender, EventArgs e)
+        {
+            string newsId = Request.QueryString["NewsId"];
+            string connectionString = WebConfigurationManager.ConnectionStrings["NewsDB"].ConnectionString;
+            string publishQuery = "UPDATE [NewsList] SET IsPublish = 1 WHERE NewsId = @NewsId";
 
+            using(SqlConnection conn = new SqlConnection(connectionString))
+            {
+                using(SqlCommand command = new SqlCommand(publishQuery, conn))
+                {
+                    command.Parameters.AddWithValue("@NewsId", newsId);
+
+                    try
+                    {
+                        conn.Open();
+                        int result = command.ExecuteNonQuery();
+                        if(result < 0)
+                        {
+                            Response.Write("<script>alert('發布消息失敗');</script>");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Response.Write($"<script>alert('{ex.Message}');</script>");
+                    }
+                    finally
+                    {
+                        conn.Close();
+                    }
+                }
+            }
+        }
+
+        protected void NewsEdit_Click(object sender, EventArgs e)
+        {
+            string newsId = Request.QueryString["NewsId"];
+            Response.Redirect($"News_Edit.aspx?NewsId={newsId}");
+        }
+
+        protected void ImgMgmt_Click(object sender, EventArgs e)
+        {
+            string newsId = Request.QueryString["NewsId"];
+            Response.Redirect($"News_Img_Mgmt.aspx?NewsId={newsId}");
+        }
+
+        protected void FileMgmt_Click(object sender, EventArgs e)
+        {
+            string newsId = Request.QueryString["NewsId"];
+            Response.Redirect($"News_File_Mgmt.aspx?NewsId={newsId}");
+        }
+
+        protected void LinkMgmt_Click(object sender, EventArgs e)
+        {
+            string newsId = Request.QueryString["NewsId"];
+            Response.Redirect($"News_Link_Mgmt.aspx?NewsId={newsId}");
+        }
     }
 }

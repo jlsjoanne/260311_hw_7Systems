@@ -211,12 +211,15 @@
     <Content Include="Site.Master" />
     <Content Include="System01_News\News.aspx" />
     <Content Include="System01_News\News_Add.aspx" />
-    <Content Include="System01_News\News_Add_File.aspx" />
-    <Content Include="System01_News\News_Add_Image.aspx" />
-    <Content Include="System01_News\News_Add_Link.aspx" />
     <Content Include="System01_News\News_Edit.aspx" />
-    <Content Include="System01_News\News_Edit_Img_Select.aspx" />
+    <Content Include="System01_News\News_File_Add.aspx" />
+    <Content Include="System01_News\News_File_Mgmt.aspx" />
+    <Content Include="System01_News\News_Img_Add.aspx" />
+    <Content Include="System01_News\News_Img_Mgmt.aspx" />
+    <Content Include="System01_News\News_Link_Add.aspx" />
+    <Content Include="System01_News\News_Link_Mgmt.aspx" />
     <Content Include="System01_News\News_List.aspx" />
+    <Content Include="System01_News\News_List_Mgmt.aspx" />
     <Content Include="System02_PhotoAlbums\Album.aspx" />
     <Content Include="System02_PhotoAlbums\AlbumList.aspx" />
     <Content Include="System02_PhotoAlbums\Album_Add.aspx" />
@@ -321,27 +324,6 @@
     <Compile Include="System01_News\News_Add.aspx.designer.cs">
       <DependentUpon>News_Add.aspx</DependentUpon>
     </Compile>
-    <Compile Include="System01_News\News_Add_File.aspx.cs">
-      <DependentUpon>News_Add_File.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="System01_News\News_Add_File.aspx.designer.cs">
-      <DependentUpon>News_Add_File.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="System01_News\News_Add_Image.aspx.cs">
-      <DependentUpon>News_Add_Image.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="System01_News\News_Add_Image.aspx.designer.cs">
-      <DependentUpon>News_Add_Image.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="System01_News\News_Add_Link.aspx.cs">
-      <DependentUpon>News_Add_Link.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="System01_News\News_Add_Link.aspx.designer.cs">
-      <DependentUpon>News_Add_Link.aspx</DependentUpon>
-    </Compile>
     <Compile Include="System01_News\News_Edit.aspx.cs">
       <DependentUpon>News_Edit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -349,12 +331,47 @@
     <Compile Include="System01_News\News_Edit.aspx.designer.cs">
       <DependentUpon>News_Edit.aspx</DependentUpon>
     </Compile>
-    <Compile Include="System01_News\News_Edit_Img_Select.aspx.cs">
-      <DependentUpon>News_Edit_Img_Select.aspx</DependentUpon>
+    <Compile Include="System01_News\News_File_Add.aspx.cs">
+      <DependentUpon>News_File_Add.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="System01_News\News_Edit_Img_Select.aspx.designer.cs">
-      <DependentUpon>News_Edit_Img_Select.aspx</DependentUpon>
+    <Compile Include="System01_News\News_File_Add.aspx.designer.cs">
+      <DependentUpon>News_File_Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="System01_News\News_File_Mgmt.aspx.cs">
+      <DependentUpon>News_File_Mgmt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="System01_News\News_File_Mgmt.aspx.designer.cs">
+      <DependentUpon>News_File_Mgmt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="System01_News\News_Img_Add.aspx.cs">
+      <DependentUpon>News_Img_Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="System01_News\News_Img_Add.aspx.designer.cs">
+      <DependentUpon>News_Img_Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="System01_News\News_Img_Mgmt.aspx.cs">
+      <DependentUpon>News_Img_Mgmt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="System01_News\News_Img_Mgmt.aspx.designer.cs">
+      <DependentUpon>News_Img_Mgmt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="System01_News\News_Link_Add.aspx.cs">
+      <DependentUpon>News_Link_Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="System01_News\News_Link_Add.aspx.designer.cs">
+      <DependentUpon>News_Link_Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="System01_News\News_Link_Mgmt.aspx.cs">
+      <DependentUpon>News_Link_Mgmt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="System01_News\News_Link_Mgmt.aspx.designer.cs">
+      <DependentUpon>News_Link_Mgmt.aspx</DependentUpon>
     </Compile>
     <Compile Include="System01_News\News_List.aspx.cs">
       <DependentUpon>News_List.aspx</DependentUpon>
@@ -362,6 +379,13 @@
     </Compile>
     <Compile Include="System01_News\News_List.aspx.designer.cs">
       <DependentUpon>News_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="System01_News\News_List_Mgmt.aspx.cs">
+      <DependentUpon>News_List_Mgmt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="System01_News\News_List_Mgmt.aspx.designer.cs">
+      <DependentUpon>News_List_Mgmt.aspx</DependentUpon>
     </Compile>
     <Compile Include="System02_PhotoAlbums\Album.aspx.cs">
       <DependentUpon>Album.aspx</DependentUpon>

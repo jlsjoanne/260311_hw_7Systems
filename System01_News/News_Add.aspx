@@ -24,23 +24,7 @@
         </div>
         <br />
         <div>
-            <h4>圖片</h4>
-            <p>(可上傳多檔)</p>
-            <asp:FileUpload ID="ImagesUpload" runat="server" 
-                AllowMultiple="True" accept="image/*"/>
+            <asp:Button ID="Submit" runat="server" Text="送出" OnClick="Submit_Click" />
         </div>
-        <br />
-        <div>
-            <h4>檔案</h4>
-            <p>(可上傳多檔)</p>
-            <asp:FileUpload ID="FilesUpload" runat="server" AllowMultiple="True"/>
-        </div>
-        <br />
-        <div>
-            <asp:Button ID="Submit" runat="server" Text="下一頁" OnClick="Submit_Click" />
-        </div>
-
-        
-        
     </main>
 </asp:Content>
