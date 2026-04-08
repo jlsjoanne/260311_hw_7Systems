@@ -43,6 +43,12 @@ namespace _260311_hw_7Systems.System01_News
             Response.Redirect($"News_File_Add.aspx?NewsId={newsId}");
         }
 
+        protected void GoBack_Click(object sender, EventArgs e)
+        {
+            string newsId = Request.QueryString["NewsId"];
+            Response.Redirect($"News.aspx?NewsId={newsId}");
+        }
+
         private void BindFileGrid()
         {
             string newsId = Request.QueryString["NewsId"];
@@ -189,5 +195,7 @@ namespace _260311_hw_7Systems.System01_News
                 }
             }
         }
+
+        
     }
 }

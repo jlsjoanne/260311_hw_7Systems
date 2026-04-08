@@ -284,6 +284,8 @@ namespace _260311_hw_7Systems.System01_News
                     }
                 }
             }
+
+            Response.Redirect("News_List.aspx");
         }
 
         protected void NewsEdit_Click(object sender, EventArgs e)

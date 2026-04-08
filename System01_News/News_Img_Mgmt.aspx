@@ -3,11 +3,13 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <main>
         <div>
+            <asp:Button ID="GoBack" runat="server" Text="返回消息" OnClick="GoBack_Click" />
+            &emsp; &emsp;
             <asp:Button ID="AddImg" runat="server" Text="新增圖片" OnClick="AddImg_Click" Visible="False" />
         </div>
         <br />
         <div>
-            <h3>圖片管理</h3>
+            <p><b>圖片管理</b></p>
             <asp:GridView ID="ImgGrid" runat="server" DataKeyNames="ImageId"
                 AutoGenerateColumns="False" Visible="False" OnRowDeleting="ImgGrid_RowDeleting">
                 <Columns>

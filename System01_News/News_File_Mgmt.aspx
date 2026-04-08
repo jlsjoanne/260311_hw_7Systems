@@ -3,10 +3,13 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <main>
         <div>
+            <asp:Button ID="GoBack" runat="server" Text="返回消息" OnClick="GoBack_Click" />
+            &emsp; &emsp;
             <asp:Button ID="AddFile" runat="server" Text="新增檔案" Visible="False" OnClick="AddFile_Click"/>
         </div>
         <br />
         <div>
+            <p><b>檔案管理</b></p>
             <asp:GridView ID="FileGrid" runat="server" DataKeyNames="FileId"
                 AutoGenerateColumns="False" Visible="False"
                 OnRowDeleting="FileGrid_RowDeleting"

@@ -82,6 +82,12 @@ namespace _260311_hw_7Systems.System01_News
             Response.Redirect($"News_Img_Add.aspx?NewsId={newsId}");
         }
 
+        protected void GoBack_Click(object sender, EventArgs e)
+        {
+            string newsId = Request.QueryString["NewsId"];
+            Response.Redirect($"News.aspx?NewsId={newsId}");
+        }
+
         protected void ImgGrid_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             string imageId = ImgGrid.DataKeys[e.RowIndex].Value.ToString();
