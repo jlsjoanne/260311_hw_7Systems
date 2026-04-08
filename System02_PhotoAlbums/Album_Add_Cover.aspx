@@ -4,16 +4,13 @@
     <main aria-labelledby="title">
         <div>
             <h3>選擇相簿封面</h3>
-
-            <p><b>相片名稱</b></p>
-            <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="PhotoName" DataValueField="PhotoId"></asp:DropDownList>
-            
+            <asp:DropDownList ID="PhotoDropDown" runat="server" DataSourceID="SqlDataSource1"
+                DataTextField="PhotoName" DataValueField="PhotoId"></asp:DropDownList>
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:PhotoAlbumDB %>" SelectCommand="SELECT * FROM [Photo] WHERE ([AlbumId] = @AlbumId)">
                 <SelectParameters>
                     <asp:QueryStringParameter Name="AlbumId" QueryStringField="AlbumId" Type="String" />
                 </SelectParameters>
             </asp:SqlDataSource>
-            
         </div>
         <br />
         <div>
