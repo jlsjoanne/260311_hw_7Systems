@@ -11,3 +11,6 @@
 /bin/roslyn/System.Security.Cryptography.Primitives.dll
 /bin/roslyn/System.ValueTuple.dll
 /bin/roslyn/VBCSCompiler.exe
+/obj/Debug/260311_hw_7Systems.csproj.AssemblyReference.cache
+.vscode/settings.json
+/obj/*

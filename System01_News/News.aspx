@@ -1,0 +1,48 @@
+﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="News.aspx.cs" Inherits="_260311_hw_7Systems.System01_News.News" %>
+
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+    <main>
+        <div>
+            <asp:Button ID="NewsEdit" runat="server" Text="編輯消息" Visible="False" OnClick="NewsEdit_Click" />
+            &emsp;
+            <asp:Button ID="ImgMgmt" runat="server" Text="新增/編輯圖片" Visible="False" OnClick="ImgMgmt_Click" />
+            &emsp;
+            <asp:Button ID="FileMgmt" runat="server" Text="新增/編輯檔案" Visible="False" OnClick="FileMgmt_Click" />
+            &emsp;
+            <asp:Button ID="LinkMgmt" runat="server" Text="新增/編輯連結" Visible="False" OnClick="LinkMgmt_Click" />
+        </div>
+        <br />
+        <div>
+            <asp:Button ID="Publish" runat="server" Text="發布最新消息" Visible="False" OnClick="Publish_Click" />
+        </div>
+        <br />
+        <h3><b><asp:Label ID="NewsTitle" runat="server"></asp:Label></b></h3>
+        <br />
+        <b>分類: </b> &emsp;
+        <asp:Label ID="NewsCategory" runat="server"></asp:Label>
+        <br />
+        <b>發表時間: </b> &emsp;
+        <asp:Label ID="PostedTime" runat="server"></asp:Label>
+        <br /><br />
+        <b>內文</b>
+        <div style ="border: 1px solid black; padding: 5px">
+            <asp:Literal ID="NewsContent" runat="server"></asp:Literal>
+        </div>
+        <br />
+        <div>
+            <p>圖片</p>
+            <asp:PlaceHolder ID="PhImg" runat="server"></asp:PlaceHolder>
+        </div>
+        <br />
+        <div>
+            <p>檔案</p>
+            <asp:PlaceHolder ID="PhFile" runat="server"></asp:PlaceHolder>
+        </div>
+        <br />
+        <div>
+            <p>連結</p>
+            <asp:PlaceHolder ID="PhLink" runat="server"></asp:PlaceHolder>
+        </div>
+    </main>
+</asp:Content>
+
