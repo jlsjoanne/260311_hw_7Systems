@@ -67,6 +67,7 @@ namespace _260311_hw_7Systems.System02_PhotoAlbums
                 }
             }
 
+            // insert album
             using(SqlConnection conn = new SqlConnection(connectionString))
             {
                 using(SqlCommand command = new SqlCommand(insertAlbumQuery, conn))
@@ -94,6 +95,7 @@ namespace _260311_hw_7Systems.System02_PhotoAlbums
                 }
             }
 
+            // get AlbumId
             using(SqlConnection conn = new SqlConnection(connectionString))
             {
                 using (SqlCommand command = new SqlCommand(getIDQuery,conn))

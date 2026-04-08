@@ -35,6 +35,7 @@ namespace _260311_hw_7Systems.System02_PhotoAlbums
                 if(Session["RoleId"] != null && (Session["RoleId"].ToString() == "1" || Session["RoleId"].ToString() == "2"))
                 {
                     AddPhoto.Visible = true;
+                    AlbumMgmt.Visible = true;
                 }
             }
         }
@@ -120,6 +121,12 @@ namespace _260311_hw_7Systems.System02_PhotoAlbums
             Response.Redirect($"Photo_Add.aspx?AlbumId={albumId}");
         }
 
+        protected void AlbumMgmt_Click(object sender, EventArgs e)
+        {
+            string albumId = Request.QueryString["AlbumId"].ToString();
+            Response.Redirect($"Album_Mgmt.aspx?AlbumId={albumId}");
+        }
+
         protected string CombinePath(object folder, object file)
         {
             string folderPath = folder?.ToString() ?? String.Empty;
@@ -137,5 +144,7 @@ namespace _260311_hw_7Systems.System02_PhotoAlbums
                 Response.Redirect($"Photo.aspx?PhotoId={photoId}");
             }
         }
+
+        
     }
 }

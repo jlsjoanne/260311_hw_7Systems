@@ -15,16 +15,19 @@ namespace _260311_hw_7Systems.System02_PhotoAlbums
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+            if (Session["RoleId"] != null && (Session["RoleId"].ToString() == "1" || Session["RoleId"].ToString() == "2"))
+            {
+                AddNew.Visible = true;
+                CommandField commandField = (CommandField)AlbumGrid.Columns[0];
+                commandField.ShowDeleteButton = true;
+            }
             if (!IsPostBack)
             {
                 AlbumDataBind();
             }
-            if (Session["RoleId"] != null && (Session["RoleId"].ToString() == "1" || Session["RoleId"].ToString() == "2"))
-            {
-                AddNew.Visible = true;
-            }
-            
-            
+
+
         }
 
         protected void AddNew_Click(object sender, EventArgs e)
@@ -35,7 +38,10 @@ namespace _260311_hw_7Systems.System02_PhotoAlbums
         private void AlbumDataBind()
         {
             string connectionString = WebConfigurationManager.ConnectionStrings["PhotoAlbumDB"].ConnectionString;
-            string getAlbumData = "SELECT A.AlbumId, A.AlbumName, P.PhotoName, P.PhotoPath FROM [Album] AS A LEFT JOIN [Cover] AS C ON A.AlbumId = C.AlbumId LEFT JOIN [Photo] AS P ON C.PhotoId = P.PhotoId";
+            string getAlbumData = "SELECT A.AlbumId, A.AlbumName, P.PhotoName, P.PhotoPath " +
+                "FROM [Album] AS A "+
+                "LEFT JOIN [Cover] AS C ON A.AlbumId = C.AlbumId "+
+                "LEFT JOIN [Photo] AS P ON C.PhotoId = P.PhotoId";
 
             using(SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -48,8 +54,8 @@ namespace _260311_hw_7Systems.System02_PhotoAlbums
                         DataTable dt = new DataTable();
                         da.Fill(dt);
 
-                        AlbumRepeater.DataSource = dt;
-                        AlbumRepeater.DataBind();
+                        AlbumGrid.DataSource = dt;
+                        AlbumGrid.DataBind();
                     }
                     catch(Exception ex)
                     {
@@ -72,15 +78,52 @@ namespace _260311_hw_7Systems.System02_PhotoAlbums
             return Path.Combine(folderPath, filename);
         }
 
-        protected void AlbumRepeater_ItemCommand(object source, RepeaterCommandEventArgs e)
+        protected void AlbumGrid_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             if(e.CommandName == "ToAlbum")
             {
                 string albumId = e.CommandArgument.ToString();
                 Response.Redirect($"Album.aspx?AlbumId={albumId}");
+            } 
+        }
+
+        protected void AlbumGrid_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            string albumId = AlbumGrid.DataKeys[e.RowIndex].Value.ToString();
+            DeleteAlbum(albumId);
+            AlbumDataBind();
+        }
+
+        private void DeleteAlbum(string albumId)
+        {
+            string connectionString = WebConfigurationManager.ConnectionStrings["PhotoAlbumDB"].ConnectionString;
+            string deleteAlbumQuery = "DELETE FROM [Album] WHERE AlbumId = @AlbumId";
+
+            using(SqlConnection conn = new SqlConnection(connectionString))
+            {
+                using(SqlCommand command = new SqlCommand(deleteAlbumQuery, conn))
+                {
+                    command.Parameters.AddWithValue("@AlbumId", albumId);
+
+                    try
+                    {
+                        conn.Open();
+                        int result = command.ExecuteNonQuery();
+                        if(result < 0)
+                        {
+                            Response.Write("<script>alert('刪除相簿失敗')</script>");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Response.Write($"<script>alert('{ex.Message}')</script>");
+                    }
+                    finally
+                    {
+                        conn.Close();
+                    }
+                }
             }
-            
-            
         }
     }
 }

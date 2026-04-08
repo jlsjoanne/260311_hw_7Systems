@@ -16,13 +16,12 @@
             <asp:Button ID="Publish" runat="server" Text="發布最新消息" Visible="False" OnClick="Publish_Click" />
         </div>
         <br />
-        <h3>標題</h3>
-        <h4><asp:Label ID="NewsTitle" runat="server"></asp:Label></h4>
+        <h3><b><asp:Label ID="NewsTitle" runat="server"></asp:Label></b></h3>
         <br />
-        <b>分類</b>
+        <b>分類: </b> &emsp;
         <asp:Label ID="NewsCategory" runat="server"></asp:Label>
         <br />
-        <b>發表時間</b>
+        <b>發表時間: </b> &emsp;
         <asp:Label ID="PostedTime" runat="server"></asp:Label>
         <br /><br />
         <b>內文</b>

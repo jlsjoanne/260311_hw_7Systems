@@ -224,6 +224,8 @@
     <Content Include="System02_PhotoAlbums\AlbumList.aspx" />
     <Content Include="System02_PhotoAlbums\Album_Add.aspx" />
     <Content Include="System02_PhotoAlbums\Album_Add_Cover.aspx" />
+    <Content Include="System02_PhotoAlbums\Album_Edit.aspx" />
+    <Content Include="System02_PhotoAlbums\Album_Mgmt.aspx" />
     <Content Include="System02_PhotoAlbums\Photo.aspx" />
     <Content Include="System02_PhotoAlbums\Photo_Add.aspx" />
     <Content Include="System02_PhotoAlbums\Photo_Add_Desc.aspx" />
@@ -414,6 +416,20 @@
     </Compile>
     <Compile Include="System02_PhotoAlbums\Album_Add_Cover.aspx.designer.cs">
       <DependentUpon>Album_Add_Cover.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="System02_PhotoAlbums\Album_Edit.aspx.cs">
+      <DependentUpon>Album_Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="System02_PhotoAlbums\Album_Edit.aspx.designer.cs">
+      <DependentUpon>Album_Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="System02_PhotoAlbums\Album_Mgmt.aspx.cs">
+      <DependentUpon>Album_Mgmt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="System02_PhotoAlbums\Album_Mgmt.aspx.designer.cs">
+      <DependentUpon>Album_Mgmt.aspx</DependentUpon>
     </Compile>
     <Compile Include="System02_PhotoAlbums\Photo.aspx.cs">
       <DependentUpon>Photo.aspx</DependentUpon>
