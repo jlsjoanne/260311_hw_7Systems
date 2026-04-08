@@ -4,24 +4,21 @@
     <main>
         <div>
             <asp:Button ID="AddNew" runat="server" Text="新增" Visible="False" OnClick="AddNew_Click"/>
+            &emsp; &emsp;
+            <asp:Button ID="NewsMgmt" runat="server" Text="管理最新消息" Visible="False" OnClick="NewsMgmt_Click" />
         </div>
         <br />
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="NewsId" DataSourceID="SqlDataSource1">
-            <Columns>
-                <asp:CommandField ShowDeleteButton="False" />   
-                <asp:BoundField DataField="CategoryName" HeaderText="分類" SortExpression="CategoryId" />
-                <asp:HyperLinkField DataNavigateUrlFields="NewsId" DataNavigateUrlFormatString="News.aspx?NewsId={0}" DataTextField="NewsTitle" HeaderText="標題" />
-                <asp:BoundField DataField="PostDate" HeaderText="PostDate" SortExpression="PostDate" />
-            </Columns>
-    </asp:GridView>
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
-        ConnectionString="<%$ ConnectionStrings:NewsDB %>" 
-        DeleteCommand="DELETE FROM [NewsList] WHERE [NewsId] = @NewsId" 
-        SelectCommand="SELECT [NewsId], [NewsTitle], C.CategoryName, N.CategoryId, [PostDate] FROM [NewsList] AS N JOIN [Category] AS C ON N.CategoryId = C.CategoryId" >
-        <DeleteParameters>
-            <asp:Parameter Name="NewsId" Type="String" />
-        </DeleteParameters>
-        
-    </asp:SqlDataSource>
+        <div>
+            <asp:GridView ID="NewsGrid" runat="server" 
+                AutoGenerateColumns="False"
+                AllowPaging="True" PageSize="20"
+                OnPageIndexChanging="NewsGrid_PageIndexChanging">
+                <Columns>
+                    <asp:BoundField DataField="CategoryName" HeaderText="類別" />
+                    <asp:HyperLinkField DataNavigateUrlFields="NewsId" DataNavigateUrlFormatString="News.aspx?NewsId={0}" DataTextField="NewsTitle" HeaderText="標題" />
+                    <asp:BoundField DataField="PostDate" HeaderText="發表日期" />
+                </Columns>
+            </asp:GridView>
+        </div>
     </main>
 </asp:Content>

@@ -2,6 +2,20 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <main>
+        <div>
+            <asp:Button ID="NewsEdit" runat="server" Text="編輯消息" Visible="False" OnClick="NewsEdit_Click" />
+            &emsp;
+            <asp:Button ID="ImgMgmt" runat="server" Text="新增/編輯圖片" Visible="False" OnClick="ImgMgmt_Click" />
+            &emsp;
+            <asp:Button ID="FileMgmt" runat="server" Text="新增/編輯檔案" Visible="False" OnClick="FileMgmt_Click" />
+            &emsp;
+            <asp:Button ID="LinkMgmt" runat="server" Text="新增/編輯連結" Visible="False" OnClick="LinkMgmt_Click" />
+        </div>
+        <br />
+        <div>
+            <asp:Button ID="Publish" runat="server" Text="發布最新消息" Visible="False" OnClick="Publish_Click" />
+        </div>
+        <br />
         <h3>標題</h3>
         <h4><asp:Label ID="NewsTitle" runat="server"></asp:Label></h4>
         <br />

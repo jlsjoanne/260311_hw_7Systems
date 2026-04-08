@@ -107,7 +107,7 @@ namespace _260311_hw_7Systems.System01_News
                 }
             }
 
-            Response.Redirect($"News_Edit_Img_Select.aspx?NewsId={newsId}");
+            Response.Redirect($"News.aspx?NewsId={newsId}");
         }
     }
 }
