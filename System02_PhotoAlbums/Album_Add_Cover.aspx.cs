@@ -17,7 +17,7 @@ namespace _260311_hw_7Systems.System02_PhotoAlbums
         {
             if (Request.QueryString["AlbumId"] != null)
             {
-
+                
             }
             else if (Request.UrlReferrer != null)
             {
@@ -32,28 +32,36 @@ namespace _260311_hw_7Systems.System02_PhotoAlbums
         protected void Submit_Click(object sender, EventArgs e)
         {
             string albumId = Request.QueryString["AlbumId"].ToString();
+            UpdateCover(albumId);
+            Response.Redirect("AlbumList.aspx");
+        }
+
+        
+
+        private void UpdateCover(string albumId)
+        {
             string connectionString = WebConfigurationManager.ConnectionStrings["PhotoAlbumDB"].ConnectionString;
-            string insertCoverQuery = "INSERT INTO Cover (AlbumId, PhotoId) VALUES (@AlbumId, @PhotoId)";
+            string updateCoverQuery = "UPDATE [Cover] SET PhotoId = @PhotoId WHERE AlbumId = @AlbumId";
 
             using(SqlConnection conn = new SqlConnection(connectionString))
             {
-                using(SqlCommand command = new SqlCommand(insertCoverQuery, conn))
+                using(SqlCommand command = new SqlCommand(updateCoverQuery, conn))
                 {
+                    command.Parameters.AddWithValue("@PhotoId", PhotoDropDown.SelectedValue);
                     command.Parameters.AddWithValue("@AlbumId", albumId);
-                    command.Parameters.AddWithValue("@PhotoId", DropDownList1.SelectedValue);
 
                     try
                     {
                         conn.Open();
                         int result = command.ExecuteNonQuery();
-                        if(result < 0)
+                        if (result < 0)
                         {
-                            Response.Write("<script>alert('選擇封面失敗')</script>");
+                            Response.Write("<script>alert('更新相簿封面失敗')</script>");
                         }
                     }
-                    catch(Exception ex)
+                    catch (Exception ex)
                     {
-                        Response.Write($"<script>alert('{ex.Message}')</sctip>");
+                        Response.Write($"<script>alert('{ex.Message}')</script>");
                     }
                     finally
                     {
@@ -61,8 +69,6 @@ namespace _260311_hw_7Systems.System02_PhotoAlbums
                     }
                 }
             }
-
-            Response.Redirect("AlbumList.aspx");
         }
     }
 }

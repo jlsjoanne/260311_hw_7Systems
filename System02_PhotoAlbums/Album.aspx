@@ -5,6 +5,8 @@
     <main>
         <div>
             <asp:Button ID="AddPhoto" runat="server" Text="新增相片" Visible="False" OnClick="AddPhoto_Click"/>
+            &emsp; &emsp;
+            <asp:Button ID="AlbumMgmt" runat="server" Text="相簿管理" Visible="False" OnClick="AlbumMgmt_Click" />
         </div>
         <div>
             <h2>
