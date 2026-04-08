@@ -26,13 +26,11 @@ namespace _260311_hw_7Systems.System01_News
                     Publish.Visible = true;
                 }
                 string newsId = Request.QueryString["NewsId"].ToString();
-                if (!IsPostBack)
-                {
-                    GetNewsData(newsId);
-                    GetImgData(newsId);
-                    GetFileData(newsId);
-                    GetLinkData(newsId);
-                }
+                GetNewsData(newsId);
+                GetImgData(newsId);
+                GetFileData(newsId);
+                GetLinkData(newsId);
+                
                 
             }
             else if(Request.UrlReferrer != null)
@@ -139,7 +137,7 @@ namespace _260311_hw_7Systems.System01_News
         private void GetFileData(string newsId)
         {
             string connectionString = WebConfigurationManager.ConnectionStrings["NewsDB"].ConnectionString;
-            string getFileQuery = "SELECT * FROM Files WHERE NewsId = @NewsId";
+            string getFileQuery = "SELECT * FROM [Files] WHERE NewsId = @NewsId";
 
             using(SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -203,7 +201,7 @@ namespace _260311_hw_7Systems.System01_News
             }
             else
             {
-                Response.Write("<script>alert('This file does not exist.')</script>");
+                Response.Write("<script>alert('檔案不存在')</script>");
             }
         }
 

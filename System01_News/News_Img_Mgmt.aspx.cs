@@ -151,7 +151,7 @@ namespace _260311_hw_7Systems.System01_News
                         int result = command.ExecuteNonQuery();
                         if(result < 0)
                         {
-                            Response.Write("<script>alert('刪圖片失敗')</script>");
+                            Response.Write("<script>alert('刪除圖片失敗')</script>");
                         }
                     }
                     catch (Exception ex)
