@@ -92,6 +92,9 @@ namespace _260311_hw_7Systems.System07_ProductMgmt
 
         private void DeleteFromId(string fileId)
         {
+            //Delete from folder
+            DeleteFile(fileId);
+            //Delete from DB
             string connectionString = WebConfigurationManager.ConnectionStrings["ProductDB"].ConnectionString;
             string deleteFileQuery = "DELETE FROM [Files] WHERE FileId = @FileId";
 
@@ -120,6 +123,60 @@ namespace _260311_hw_7Systems.System07_ProductMgmt
                     }
                 }
             }
+        }
+
+        private void DeleteFile(string fileId)
+        {
+            string connectionString = WebConfigurationManager.ConnectionStrings["ProductDB"].ConnectionString;
+            string getPathQuery = "SELECT FPath FROM [Files] WHERE FileId = @FileId";
+            string fPath = "";
+
+            using(SqlConnection conn = new SqlConnection(connectionString))
+            {
+                using(SqlCommand command = new SqlCommand(getPathQuery, conn))
+                {
+                    command.Parameters.AddWithValue("@FileId", fileId);
+                    SqlDataReader dr = null;
+
+                    try
+                    {
+                        conn.Open();
+                        dr = command.ExecuteReader();
+                        if (dr.HasRows)
+                        {
+                            dr.Read();
+                            fPath = dr["FPath"].ToString();
+                        }
+                        dr.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        Response.Write($"<script>alert('{ex.Message}')</script>");
+                    }
+                    finally
+                    {
+                        conn.Close();
+                    }
+                }
+            }
+
+            if(fPath != "")
+            {
+                string folderPath = Server.MapPath("~/Files/");
+                string fileName = Path.GetFileName(fPath);
+                string filePath = Path.Combine(folderPath, fileName);
+
+                if (File.Exists(filePath))
+                {
+                    File.Delete(filePath);
+                }
+            }
+        }
+
+        protected void GoBack_Click(object sender, EventArgs e)
+        {
+            string productId = Request.QueryString["ProductId"];
+            Response.Redirect($"Product.aspx?ProductId={productId}");
         }
     }
 }
