@@ -65,11 +65,13 @@ namespace _260311_hw_7Systems.System05_Video
         {
             string categoryId = DataBinder.Eval(e.Item.DataItem, "CategoryId").ToString();
 
-            Repeater childRepeater = (Repeater)e.Item.FindControl("YtRepeater");
+            ListView childListView = (ListView)e.Item.FindControl("YtList");
 
-            childRepeater.DataSource = BindVideoData(categoryId);
-            childRepeater.DataBind();
+            childListView.DataSource = BindVideoData(categoryId);
+            childListView.DataBind();
         }
+
+        
 
         protected DataTable BindVideoData(string categoryId)
         {
@@ -108,20 +110,19 @@ namespace _260311_hw_7Systems.System05_Video
             return "https://www.youtube.com/watch?v=" + ytId;
         }
 
+        protected string CombineYtEmbed(object vId)
+        {
+            string ytId = vId?.ToString() ?? String.Empty;
+            return "https://www.youtube.com/embed/" + ytId;
+        }
+
         protected string CombineYtImg(object vId)
         {
             string ytId = vId?.ToString() ?? String.Empty;
             return "https://img.youtube.com/vi/" + ytId + "/sddefault.jpg";
         }
 
-        protected void YTList_ItemCommand(object sender, RepeaterCommandEventArgs e)
-        {
-            if(e.CommandName == "ToYt")
-            {
-                string ytUrl = e.CommandArgument.ToString();
-                Response.Redirect(ytUrl);
-            }
-        }
+        
 
         
     }
