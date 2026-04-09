@@ -4,6 +4,8 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <main>
         <div>
+            <asp:Button ID="GoBack" runat="server" Text="返回商品" OnClick="GoBack_Click" />
+            &emsp; &emsp;
             <asp:Button ID="AddNew" runat="server" Text="新增圖片" OnClick="AddNew_Click" Visible="False" />
         </div>
         <br />
