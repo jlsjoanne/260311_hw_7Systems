@@ -233,6 +233,9 @@
     <Content Include="System03_File\File_Add.aspx" />
     <Content Include="System04_Ads\AdsList.aspx" />
     <Content Include="System04_Ads\Ads_Add.aspx" />
+    <Content Include="System04_Ads\Ads_Category_Add.aspx" />
+    <Content Include="System04_Ads\Ads_Mgmt.aspx" />
+    <Content Include="System04_Ads\Ads_Mgmt_byCategory.aspx" />
     <Content Include="System05_Video\VideoList.aspx" />
     <Content Include="System05_Video\Video_Add.aspx" />
     <Content Include="System06_Forums\Article.aspx" />
@@ -479,6 +482,27 @@
     </Compile>
     <Compile Include="System04_Ads\Ads_Add.aspx.designer.cs">
       <DependentUpon>Ads_Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="System04_Ads\Ads_Category_Add.aspx.cs">
+      <DependentUpon>Ads_Category_Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="System04_Ads\Ads_Category_Add.aspx.designer.cs">
+      <DependentUpon>Ads_Category_Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="System04_Ads\Ads_Mgmt.aspx.cs">
+      <DependentUpon>Ads_Mgmt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="System04_Ads\Ads_Mgmt.aspx.designer.cs">
+      <DependentUpon>Ads_Mgmt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="System04_Ads\Ads_Mgmt_byCategory.aspx.cs">
+      <DependentUpon>Ads_Mgmt_byCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="System04_Ads\Ads_Mgmt_byCategory.aspx.designer.cs">
+      <DependentUpon>Ads_Mgmt_byCategory.aspx</DependentUpon>
     </Compile>
     <Compile Include="System05_Video\VideoList.aspx.cs">
       <DependentUpon>VideoList.aspx</DependentUpon>
