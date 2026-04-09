@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\jlsjo\\Documents\\RocketCamp\\Webform\\260311_hw_7Systems\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6D99CF2F-BDDC-4D82-8B7E-8582BBEA7ACD}|260311_hw_7Systems.csproj|c:\\users\\jlsjo\\documents\\rocketcamp\\webform\\260311_hw_7systems\\system03_file\\filelist.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6D99CF2F-BDDC-4D82-8B7E-8582BBEA7ACD}|260311_hw_7Systems.csproj|solutionrelative:system03_file\\filelist.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6D99CF2F-BDDC-4D82-8B7E-8582BBEA7ACD}|260311_hw_7Systems.csproj|c:\\users\\jlsjo\\documents\\rocketcamp\\webform\\260311_hw_7systems\\system04_ads\\ads_mgmt_bycategory.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D99CF2F-BDDC-4D82-8B7E-8582BBEA7ACD}|260311_hw_7Systems.csproj|solutionrelative:system04_ads\\ads_mgmt_bycategory.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6D99CF2F-BDDC-4D82-8B7E-8582BBEA7ACD}|260311_hw_7Systems.csproj|c:\\users\\jlsjo\\documents\\rocketcamp\\webform\\260311_hw_7systems\\system03_file\\filelist.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{6D99CF2F-BDDC-4D82-8B7E-8582BBEA7ACD}|260311_hw_7Systems.csproj|solutionrelative:system03_file\\filelist.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{6D99CF2F-BDDC-4D82-8B7E-8582BBEA7ACD}|260311_hw_7Systems.csproj|c:\\users\\jlsjo\\documents\\rocketcamp\\webform\\260311_hw_7systems\\system04_ads\\ads_mgmt.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{6D99CF2F-BDDC-4D82-8B7E-8582BBEA7ACD}|260311_hw_7Systems.csproj|solutionrelative:system04_ads\\ads_mgmt.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D99CF2F-BDDC-4D82-8B7E-8582BBEA7ACD}|260311_hw_7Systems.csproj|c:\\users\\jlsjo\\documents\\rocketcamp\\webform\\260311_hw_7systems\\system04_ads\\ads_mgmt.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D99CF2F-BDDC-4D82-8B7E-8582BBEA7ACD}|260311_hw_7Systems.csproj|solutionrelative:system04_ads\\ads_mgmt.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D99CF2F-BDDC-4D82-8B7E-8582BBEA7ACD}|260311_hw_7Systems.csproj|c:\\users\\jlsjo\\documents\\rocketcamp\\webform\\260311_hw_7systems\\system04_ads\\ads_mgmt_bycategory.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{6D99CF2F-BDDC-4D82-8B7E-8582BBEA7ACD}|260311_hw_7Systems.csproj|solutionrelative:system04_ads\\ads_mgmt_bycategory.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,32 +26,58 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Ads_Mgmt.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\jlsjo\\Documents\\RocketCamp\\Webform\\260311_hw_7Systems\\System04_Ads\\Ads_Mgmt.aspx.cs",
+              "RelativeDocumentMoniker": "System04_Ads\\Ads_Mgmt.aspx.cs",
+              "ToolTip": "C:\\Users\\jlsjo\\Documents\\RocketCamp\\Webform\\260311_hw_7Systems\\System04_Ads\\Ads_Mgmt.aspx.cs",
+              "RelativeToolTip": "System04_Ads\\Ads_Mgmt.aspx.cs",
+              "ViewState": "AgIAAK8AAAAAAAAAAAA4wLYAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-09T07:52:26.76Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "FileList.aspx",
-              "DocumentMoniker": "C:\\Users\\jlsjo\\Documents\\RocketCamp\\Webform\\260311_hw_7Systems\\System03_File\\FileList.aspx",
-              "RelativeDocumentMoniker": "System03_File\\FileList.aspx",
-              "ToolTip": "C:\\Users\\jlsjo\\Documents\\RocketCamp\\Webform\\260311_hw_7Systems\\System03_File\\FileList.aspx",
-              "RelativeToolTip": "System03_File\\FileList.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Title": "Ads_Mgmt.aspx",
+              "DocumentMoniker": "C:\\Users\\jlsjo\\Documents\\RocketCamp\\Webform\\260311_hw_7Systems\\System04_Ads\\Ads_Mgmt.aspx",
+              "RelativeDocumentMoniker": "System04_Ads\\Ads_Mgmt.aspx",
+              "ToolTip": "C:\\Users\\jlsjo\\Documents\\RocketCamp\\Webform\\260311_hw_7Systems\\System04_Ads\\Ads_Mgmt.aspx",
+              "RelativeToolTip": "System04_Ads\\Ads_Mgmt.aspx",
+              "LogicalView": "7651a702-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2026-04-09T02:16:07.221Z",
+              "WhenOpened": "2026-04-09T07:51:47.25Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "FileList.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\jlsjo\\Documents\\RocketCamp\\Webform\\260311_hw_7Systems\\System03_File\\FileList.aspx.cs",
-              "RelativeDocumentMoniker": "System03_File\\FileList.aspx.cs",
-              "ToolTip": "C:\\Users\\jlsjo\\Documents\\RocketCamp\\Webform\\260311_hw_7Systems\\System03_File\\FileList.aspx.cs",
-              "RelativeToolTip": "System03_File\\FileList.aspx.cs",
-              "ViewState": "AgIAAMgAAAAAAAAAAAA0wLYAAAAIAAAAAAAAAA==",
+              "Title": "Ads_Mgmt_byCategory.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\jlsjo\\Documents\\RocketCamp\\Webform\\260311_hw_7Systems\\System04_Ads\\Ads_Mgmt_byCategory.aspx.cs",
+              "RelativeDocumentMoniker": "System04_Ads\\Ads_Mgmt_byCategory.aspx.cs",
+              "ToolTip": "C:\\Users\\jlsjo\\Documents\\RocketCamp\\Webform\\260311_hw_7Systems\\System04_Ads\\Ads_Mgmt_byCategory.aspx.cs",
+              "RelativeToolTip": "System04_Ads\\Ads_Mgmt_byCategory.aspx.cs",
+              "ViewState": "AgIAALMAAAAAAAAAAAAIwLcAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-09T02:15:02.677Z",
+              "WhenOpened": "2026-04-09T07:08:51.136Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Ads_Mgmt_byCategory.aspx",
+              "DocumentMoniker": "C:\\Users\\jlsjo\\Documents\\RocketCamp\\Webform\\260311_hw_7Systems\\System04_Ads\\Ads_Mgmt_byCategory.aspx",
+              "RelativeDocumentMoniker": "System04_Ads\\Ads_Mgmt_byCategory.aspx",
+              "ToolTip": "C:\\Users\\jlsjo\\Documents\\RocketCamp\\Webform\\260311_hw_7Systems\\System04_Ads\\Ads_Mgmt_byCategory.aspx",
+              "RelativeToolTip": "System04_Ads\\Ads_Mgmt_byCategory.aspx",
+              "LogicalView": "7651a702-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-04-09T07:07:09.455Z",
               "EditorCaption": ""
             },
             {
