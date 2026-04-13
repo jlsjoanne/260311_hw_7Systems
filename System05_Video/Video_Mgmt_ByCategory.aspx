@@ -10,12 +10,15 @@
         <br />
         <div>
             <p><b>分類影片管理</b></p>
-            <asp:GridView ID="VideoGrid" runat="server" 
-                Visible="False" AutoGenerateColumns="False">
+            <asp:GridView ID="VideoGrid" runat="server" DataKeyNames="VideoId"
+                Visible="False" AutoGenerateColumns="False" Width="100%"
+                OnRowEditing="VideoGrid_RowEditing"
+                OnRowUpdating="VideoGrid_RowUpdating"
+                OnRowCancelingEdit="VideoGrid_RowCancelingEdit"
+                OnRowDeleting="VideoGrid_RowDeleting">
                 <Columns>
                     <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
-                    <asp:BoundField DataField="VideoName" HeaderText="影片名稱" />
-                    <asp:BoundField DataField="VideoId" HeaderText="Youtube Video Id" />
+                    <asp:BoundField DataField="VideoName" HeaderText="影片名稱"/>
                     <asp:HyperLinkField DataNavigateUrlFields="VideoId" DataNavigateUrlFormatString="https://www.youtube.com/watch?v={0}" HeaderText="影片連結" Target="_blank" Text="View" />
                 </Columns>
             </asp:GridView>

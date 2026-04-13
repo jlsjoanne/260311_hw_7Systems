@@ -10,7 +10,7 @@
         <br />
         <div>
             <h3>分類管理</h3>
-            <asp:GridView ID="CategoryGrid" runat="server" 
+            <asp:GridView ID="CategoryGrid" runat="server" Width="100%"
                 AutoGenerateColumns="False" DataKeyNames="CategoryId"
                 OnRowEditing="CategoryGrid_RowEditing"
                 OnRowUpdating="CategoryGrid_RowUpdating"
