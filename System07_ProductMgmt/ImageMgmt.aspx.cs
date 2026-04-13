@@ -56,12 +56,17 @@ namespace _260311_hw_7Systems.System07_ProductMgmt
             string imageId = ImgGrid.DataKeys[e.RowIndex].Value.ToString();
             string productId = Request.QueryString["ProductId"].ToString();
             DeleteFromId(imageId);
+            e.Cancel = true;
             BindImgData(productId);
 
         }
 
         private void DeleteFromId(string imageId)
         {
+            // Delete From Folder
+            DeleteImg(imageId);
+            
+            // Delete From DB
             string connectionString = WebConfigurationManager.ConnectionStrings["ProductDB"].ConnectionString;
             string deleteImgQuery = "DELETE FROM [Images] WHERE ImageId = @ImageId";
 
@@ -88,6 +93,54 @@ namespace _260311_hw_7Systems.System07_ProductMgmt
                     {
                         conn.Close();
                     }
+                }
+            }
+        }
+
+        private void DeleteImg(string imageId)
+        {
+            string connectionString = WebConfigurationManager.ConnectionStrings["ProductDB"].ConnectionString;
+            string getImgPath = "SELECT IPath FROM [Images] WHERE ImageId = @ImageId";
+            string iPath = "";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                using(SqlCommand command = new SqlCommand(getImgPath, conn))
+                {
+                    command.Parameters.AddWithValue("@ImageId", imageId);
+                    SqlDataReader dr = null;
+
+                    try
+                    {
+                        conn.Open();
+                        dr = command.ExecuteReader();
+                        if (dr.HasRows)
+                        {
+                            dr.Read();
+                            iPath = dr["IPath"].ToString();
+                        }
+                        dr.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        Response.Write($"<script>alert('{ex.Message}')</script>");
+                    }
+                    finally
+                    {
+                        conn.Close();
+                    }
+                }
+            }
+
+            if(iPath != "")
+            {
+                string folderPath = Server.MapPath("~/Images/");
+                string imgName = Path.GetFileName(iPath);
+                string imgPath = Path.Combine(folderPath, imgName);
+
+                if (File.Exists(imgPath))
+                {
+                    File.Delete(imgPath);
                 }
             }
         }
@@ -131,6 +184,12 @@ namespace _260311_hw_7Systems.System07_ProductMgmt
             string filename = Path.GetFileName(filePath);
 
             return Path.Combine(folderPath, filename);
+        }
+
+        protected void GoBack_Click(object sender, EventArgs e)
+        {
+            string productId = Request.QueryString["ProductId"];
+            Response.Redirect($"Product.aspx?ProductId={productId}");
         }
     }
 }

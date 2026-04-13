@@ -18,6 +18,7 @@ namespace _260311_hw_7Systems.System05_Video
             if (Session["RoleId"] != null && (Session["RoleId"].ToString() == "1" || Session["RoleId"].ToString() == "2"))
             {
                 AddNew.Visible = true;
+                Mgmt.Visible = true;
             }
             if (!IsPostBack)
             {
@@ -30,10 +31,15 @@ namespace _260311_hw_7Systems.System05_Video
             Response.Redirect("Video_Add.aspx");
         }
 
+        protected void Mgmt_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Video_Mgmt.aspx");
+        }
+
         private void GetCategoryData()
         {
             string connectionString = WebConfigurationManager.ConnectionStrings["VideoDB"].ConnectionString;
-            string getCategoryQuery = "SELECT * FROM [Category] ORDER BY [CategoryOrder] ASC";
+            string getCategoryQuery = "SELECT * FROM [Category] WHERE IsPublished = 1 ORDER BY [CategoryOrder] ASC";
 
             using(SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -65,11 +71,13 @@ namespace _260311_hw_7Systems.System05_Video
         {
             string categoryId = DataBinder.Eval(e.Item.DataItem, "CategoryId").ToString();
 
-            Repeater childRepeater = (Repeater)e.Item.FindControl("YtRepeater");
+            ListView childListView = (ListView)e.Item.FindControl("YtList");
 
-            childRepeater.DataSource = BindVideoData(categoryId);
-            childRepeater.DataBind();
+            childListView.DataSource = BindVideoData(categoryId);
+            childListView.DataBind();
         }
+
+        
 
         protected DataTable BindVideoData(string categoryId)
         {
@@ -108,19 +116,16 @@ namespace _260311_hw_7Systems.System05_Video
             return "https://www.youtube.com/watch?v=" + ytId;
         }
 
+        protected string CombineYtEmbed(object vId)
+        {
+            string ytId = vId?.ToString() ?? String.Empty;
+            return "https://www.youtube.com/embed/" + ytId;
+        }
+
         protected string CombineYtImg(object vId)
         {
             string ytId = vId?.ToString() ?? String.Empty;
             return "https://img.youtube.com/vi/" + ytId + "/sddefault.jpg";
-        }
-
-        protected void YTList_ItemCommand(object sender, RepeaterCommandEventArgs e)
-        {
-            if(e.CommandName == "ToYt")
-            {
-                string ytUrl = e.CommandArgument.ToString();
-                Response.Redirect(ytUrl);
-            }
         }
 
         

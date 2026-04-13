@@ -5,6 +5,10 @@
         <div>
             <asp:Button ID="AddNew" runat="server" Text="新增檔案" OnClick="AddNew_Click" Visible="False"/>
         </div>
+        <br />
+        <div>
+            <asp:DropDownList ID="CategoryDropDown" runat="server" AutoPostBack="True" OnSelectedIndexChanged="CategoryDropDown_SelectedIndexChanged"></asp:DropDownList>
+        </div>
         <div>
             <asp:GridView ID="FileGrid" runat="server" DataKeyNames="FileId"
                 AllowPaging="True" PageSize="5" OnPageIndexChanging="FileGridPaging_PageIndexChanging"

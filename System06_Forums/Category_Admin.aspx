@@ -4,6 +4,8 @@
     <main>
         <div>
             <asp:Button ID="AddAdmin" runat="server" Text="新增權限" OnClick="AddAdmin_Click" />
+            &emsp; &emsp;
+            <asp:Button ID="GoBack" runat="server" Text="返回論壇" OnClick="GoBack_Click" />
         </div>
         <br />
         <div>

@@ -24,6 +24,15 @@ namespace _260311_hw_7Systems.System03_File
         protected global::System.Web.UI.WebControls.Button AddNew;
 
         /// <summary>
+        /// CategoryDropDown control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList CategoryDropDown;
+
+        /// <summary>
         /// FileGrid control.
         /// </summary>
         /// <remarks>

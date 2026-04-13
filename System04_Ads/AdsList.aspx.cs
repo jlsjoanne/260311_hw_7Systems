@@ -18,6 +18,7 @@ namespace _260311_hw_7Systems.System04_Ads
             if (Session["RoleId"] != null && (Session["RoleId"].ToString() == "1" || Session["RoleId"].ToString() == "2"))
             {
                 AddNew.Visible = true;
+                AdsMgmt.Visible = true;
             }
             if (!IsPostBack)
             {
@@ -30,10 +31,15 @@ namespace _260311_hw_7Systems.System04_Ads
             Response.Redirect("Ads_Add.aspx");
         }
 
+        protected void AdsMgmt_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Ads_Mgmt.aspx");
+        }
+
         protected void BindCategory()
         {
             string connectionString = WebConfigurationManager.ConnectionStrings["AdsDB"].ConnectionString;
-            string getCategoryQuery = "SELECT * FROM [Category] ORDER BY [CategoryOrder] ASC";
+            string getCategoryQuery = "SELECT * FROM [Category] WHERE IsPublished = 1 ORDER BY [CategoryOrder] ASC";
 
             using(SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -119,5 +125,7 @@ namespace _260311_hw_7Systems.System04_Ads
                 Response.Redirect(AdUrl);
             }
         }
+
+        
     }
 }

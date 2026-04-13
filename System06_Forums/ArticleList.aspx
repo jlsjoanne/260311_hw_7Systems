@@ -4,12 +4,18 @@
     <main>
         <div>
             <asp:LinkButton ID="MyArticle" runat="server" Visible="False" OnClick="MyArticle_Click">我的文章</asp:LinkButton>
-        </div>
-        <br />
-        <h2>文章列表</h2>
-        <div>
+            &emsp; &emsp;
             <asp:Button ID="AddNew" runat="server" Text="新增文章" OnClick="AddNew_Click" Visible="False"/>
         </div>
+        <br />
+        <h2>
+            <b>
+                <asp:Label ID="CategoryName" runat="server"></asp:Label>
+            </b>
+        </h2>
+        <h4>
+            文章列表 (文章數: <asp:Label ID="ArticleCnt" runat="server"></asp:Label>)
+        </h4>
         <br />
         <div>
             <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False"

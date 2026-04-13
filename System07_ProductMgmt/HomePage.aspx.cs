@@ -131,7 +131,7 @@ namespace _260311_hw_7Systems.System07_ProductMgmt
             string productId = ProductGrid.DataKeys[e.RowIndex].Value.ToString();
 
             DeleteFromId(productId);
-
+            e.Cancel = true;
             BindGridData(MainDropDown.SelectedValue, SubDropDown.SelectedValue);
         }
 

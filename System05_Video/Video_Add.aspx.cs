@@ -31,6 +31,17 @@ namespace _260311_hw_7Systems.System05_Video
 
         protected void Submit_Click(object sender, EventArgs e)
         {
+            if(VideoName.Text == "")
+            {
+                Response.Write("<script>alert('影片標題不得為空');</script>");
+                return;
+            }
+            if(VideoId.Text.Length != 11)
+            {
+                Response.Write("<script>alert('Youtube影片ID格式錯誤');</script>");
+                return;
+            }
+            
             InsertVideoData();
             Response.Redirect("VideoList.aspx");
         }

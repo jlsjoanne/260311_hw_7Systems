@@ -141,6 +141,7 @@ namespace _260311_hw_7Systems.System01_News
         {
             string linkId = LinkGrid.DataKeys[e.RowIndex].Value.ToString();
             DeleteLink(linkId);
+            e.Cancel = true;
             BindLinkGrid();
         }
 

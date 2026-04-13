@@ -8,8 +8,11 @@
             <br />
             <asp:Label ID="RoleName" runat="server" Text="權限: "></asp:Label>
         </div>
+        <br />
         <div>
             <asp:LinkButton ID="Management" runat="server" Visible="False" OnClick="Management_Click">會員管理</asp:LinkButton>
+            <br />
+            <asp:LinkButton ID="ChangePwd" runat="server" OnClick="ChangePwd_Click">修改密碼</asp:LinkButton>
         </div>
         <br />
         <div>

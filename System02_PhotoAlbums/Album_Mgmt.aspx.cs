@@ -124,6 +124,7 @@ namespace _260311_hw_7Systems.System02_PhotoAlbums
         {
             string photoId = PhotoGrid.DataKeys[e.RowIndex].Value.ToString();
             DeletePhoto(photoId);
+            e.Cancel = true;
             BindPhotoGrid();
         }
 
@@ -165,6 +166,10 @@ namespace _260311_hw_7Systems.System02_PhotoAlbums
 
         private void DeletePhoto(string pId)
         {
+            // Delete From Folder
+            DeletePhotoFile(pId);
+            
+            // Delete from DB
             string connectionString = WebConfigurationManager.ConnectionStrings["PhotoAlbumDB"].ConnectionString;
             string deletePhotoQuery = "DELETE FROM [Photo] WHERE PhotoId = @PhotoId";
 
@@ -191,6 +196,55 @@ namespace _260311_hw_7Systems.System02_PhotoAlbums
                     {
                         conn.Close();
                     }
+                }
+            }
+        }
+
+        private void DeletePhotoFile(string pId)
+        {
+            string connectionString = WebConfigurationManager.ConnectionStrings["PhotoAlbumDB"].ConnectionString;
+            string getPathQuery = "SELECT PhotoPath FROM [Photo] WHERE PhotoId = @PhotoId";
+            string pPath = "";
+
+            using(SqlConnection conn = new SqlConnection(connectionString))
+            {
+                using(SqlCommand command = new SqlCommand(getPathQuery, conn))
+                {
+                    command.Parameters.AddWithValue("@PhotoId", pId);
+                    SqlDataReader dr = null;
+
+                    try
+                    {
+                        conn.Open();
+                        dr = command.ExecuteReader();
+                        if (dr.HasRows)
+                        {
+                            dr.Read();
+                            pPath = dr["PhotoPath"].ToString();
+                        }
+                        dr.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        Response.Write($"<script>alert('{ex.Message}')</script>");
+                    }
+                    finally
+                    {
+                        conn.Close();
+                    }
+
+                }
+            }
+
+            if(pPath != "")
+            {
+                string folderPath = Server.MapPath("~/Images/");
+                string fileName = Path.GetFileName(pPath);
+                string filePath = Path.Combine(folderPath, fileName);
+
+                if (File.Exists(filePath))
+                {
+                    File.Delete(filePath);
                 }
             }
         }
