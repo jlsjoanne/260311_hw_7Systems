@@ -101,6 +101,7 @@ namespace _260311_hw_7Systems.System05_Video
         {
             string categoryId = CategoryGrid.DataKeys[e.RowIndex].Value.ToString();
             DeleteCategory(categoryId);
+            e.Cancel = true;
             BindGridData();
         }
 

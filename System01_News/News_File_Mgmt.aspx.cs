@@ -83,6 +83,7 @@ namespace _260311_hw_7Systems.System01_News
         {
             string fileId = FileGrid.DataKeys[e.RowIndex].Value.ToString();
             DeleteFile(fileId);
+            e.Cancel = true;
             BindFileGrid();
         }
 

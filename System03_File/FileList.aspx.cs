@@ -79,7 +79,7 @@ namespace _260311_hw_7Systems.System03_File
             string fileId = FileGrid.DataKeys[e.RowIndex].Value.ToString();
             DeleteFromFolder(fileId);
             DeleteFromDB(fileId);
-
+            e.Cancel = true;
             string selectedCategory = CategoryDropDown.SelectedValue;
             BindGridData(selectedCategory);
 

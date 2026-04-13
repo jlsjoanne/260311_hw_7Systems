@@ -109,6 +109,7 @@ namespace _260311_hw_7Systems.System05_Video
         {
             string videoId = VideoGrid.DataKeys[e.RowIndex].Value.ToString();
             DeleteVideo(videoId);
+            e.Cancel = true;
             BindGridDate();
         }
 
