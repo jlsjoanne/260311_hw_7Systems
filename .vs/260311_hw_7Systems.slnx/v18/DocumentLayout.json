@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\jlsjo\\Documents\\RocketCamp\\Webform\\260311_hw_7Systems\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6D99CF2F-BDDC-4D82-8B7E-8582BBEA7ACD}|260311_hw_7Systems.csproj|c:\\users\\jlsjo\\documents\\rocketcamp\\webform\\260311_hw_7systems\\system05_video\\videolist.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{6D99CF2F-BDDC-4D82-8B7E-8582BBEA7ACD}|260311_hw_7Systems.csproj|solutionrelative:system05_video\\videolist.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{6D99CF2F-BDDC-4D82-8B7E-8582BBEA7ACD}|260311_hw_7Systems.csproj|c:\\users\\jlsjo\\documents\\rocketcamp\\webform\\260311_hw_7systems\\system05_video\\video_mgmt_bycategory.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{6D99CF2F-BDDC-4D82-8B7E-8582BBEA7ACD}|260311_hw_7Systems.csproj|solutionrelative:system05_video\\video_mgmt_bycategory.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6D99CF2F-BDDC-4D82-8B7E-8582BBEA7ACD}|260311_hw_7Systems.csproj|c:\\users\\jlsjo\\documents\\rocketcamp\\webform\\260311_hw_7systems\\system05_video\\videolist.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6D99CF2F-BDDC-4D82-8B7E-8582BBEA7ACD}|260311_hw_7Systems.csproj|solutionrelative:system05_video\\videolist.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6D99CF2F-BDDC-4D82-8B7E-8582BBEA7ACD}|260311_hw_7Systems.csproj|c:\\users\\jlsjo\\documents\\rocketcamp\\webform\\260311_hw_7systems\\system05_video\\video_mgmt_bycategory.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D99CF2F-BDDC-4D82-8B7E-8582BBEA7ACD}|260311_hw_7Systems.csproj|solutionrelative:system05_video\\video_mgmt_bycategory.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,32 +18,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "VideoList.aspx",
-              "DocumentMoniker": "C:\\Users\\jlsjo\\Documents\\RocketCamp\\Webform\\260311_hw_7Systems\\System05_Video\\VideoList.aspx",
-              "RelativeDocumentMoniker": "System05_Video\\VideoList.aspx",
-              "ToolTip": "C:\\Users\\jlsjo\\Documents\\RocketCamp\\Webform\\260311_hw_7Systems\\System05_Video\\VideoList.aspx",
-              "RelativeToolTip": "System05_Video\\VideoList.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2026-04-09T08:08:00.142Z",
+              "DocumentIndex": 1,
+              "Title": "Video_Mgmt_ByCategory.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\jlsjo\\Documents\\RocketCamp\\Webform\\260311_hw_7Systems\\System05_Video\\Video_Mgmt_ByCategory.aspx.cs",
+              "RelativeDocumentMoniker": "System05_Video\\Video_Mgmt_ByCategory.aspx.cs",
+              "ToolTip": "C:\\Users\\jlsjo\\Documents\\RocketCamp\\Webform\\260311_hw_7Systems\\System05_Video\\Video_Mgmt_ByCategory.aspx.cs",
+              "RelativeToolTip": "System05_Video\\Video_Mgmt_ByCategory.aspx.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAADwvy0AAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-13T03:11:14.14Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "VideoList.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\jlsjo\\Documents\\RocketCamp\\Webform\\260311_hw_7Systems\\System05_Video\\VideoList.aspx.cs",
-              "RelativeDocumentMoniker": "System05_Video\\VideoList.aspx.cs",
-              "ToolTip": "C:\\Users\\jlsjo\\Documents\\RocketCamp\\Webform\\260311_hw_7Systems\\System05_Video\\VideoList.aspx.cs",
-              "RelativeToolTip": "System05_Video\\VideoList.aspx.cs",
-              "ViewState": "AgIAAHAAAAAAAAAAAAA/wEgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-09T08:01:48.731Z",
+              "DocumentIndex": 0,
+              "Title": "Video_Mgmt_ByCategory.aspx",
+              "DocumentMoniker": "C:\\Users\\jlsjo\\Documents\\RocketCamp\\Webform\\260311_hw_7Systems\\System05_Video\\Video_Mgmt_ByCategory.aspx",
+              "RelativeDocumentMoniker": "System05_Video\\Video_Mgmt_ByCategory.aspx",
+              "ToolTip": "C:\\Users\\jlsjo\\Documents\\RocketCamp\\Webform\\260311_hw_7Systems\\System05_Video\\Video_Mgmt_ByCategory.aspx",
+              "RelativeToolTip": "System05_Video\\Video_Mgmt_ByCategory.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-04-13T03:09:52.679Z",
               "EditorCaption": ""
             },
             {

@@ -18,6 +18,7 @@ namespace _260311_hw_7Systems.System05_Video
             if (Session["RoleId"] != null && (Session["RoleId"].ToString() == "1" || Session["RoleId"].ToString() == "2"))
             {
                 AddNew.Visible = true;
+                Mgmt.Visible = true;
             }
             if (!IsPostBack)
             {
@@ -30,10 +31,15 @@ namespace _260311_hw_7Systems.System05_Video
             Response.Redirect("Video_Add.aspx");
         }
 
+        protected void Mgmt_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Video_Mgmt.aspx");
+        }
+
         private void GetCategoryData()
         {
             string connectionString = WebConfigurationManager.ConnectionStrings["VideoDB"].ConnectionString;
-            string getCategoryQuery = "SELECT * FROM [Category] ORDER BY [CategoryOrder] ASC";
+            string getCategoryQuery = "SELECT * FROM [Category] WHERE IsPublished = 1 ORDER BY [CategoryOrder] ASC";
 
             using(SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -121,8 +127,6 @@ namespace _260311_hw_7Systems.System05_Video
             string ytId = vId?.ToString() ?? String.Empty;
             return "https://img.youtube.com/vi/" + ytId + "/sddefault.jpg";
         }
-
-        
 
         
     }
