@@ -4,42 +4,28 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <main aria-labelledby="title">
         <div>
-            
-            
-            <asp:GridView ID="GridView1" runat="server" 
-                DataKeyNames="UserName" 
-                DataSourceID="SqlDataSource1" AutoGenerateColumns="False">
+            <asp:GridView ID="UserGrid" runat="server" DataKeyNames="UserName"
+                AutoGenerateColumns="False" Visible="False"
+                OnRowEditing="UserGrid_RowEditing"
+                OnRowUpdating="UserGrid_RowUpdating"
+                OnRowCancelingEdit="UserGrid_RowCancelingEdit"
+                OnRowDeleting="UserGrid_RowDeleting">
                 <Columns>
                     <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
-                    <asp:BoundField DataField="UserName" HeaderText="使用者名稱" />
+                    <asp:BoundField DataField="UserName" HeaderText="帳號" ReadOnly="True" />
                     <asp:TemplateField HeaderText="密碼">
                         <ItemTemplate>
-                            <asp:Label ID="LabelPwd" runat="server" Text="*******"></asp:Label>
+                            <asp:Label ID="labelPwd" runat="server" Text="******"></asp:Label>
                         </ItemTemplate>
                         <EditItemTemplate>
-                            <asp:TextBox ID="TextBoxPwd" runat="server"
-                                TextMode="Password" Text='<%# Bind("PassWord") %>' ></asp:TextBox>
+                            <asp:TextBox ID="tbPwd" runat="server" 
+                                Text='<%# Eval("PassWord") %>'></asp:TextBox>
                         </EditItemTemplate>
                     </asp:TemplateField>
-                    <asp:BoundField DataField="RoleId" HeaderText="權限編號" />
+                    <asp:BoundField DataField="RoleId" HeaderText="權限代碼" />
+                    <asp:BoundField DataField="RoleName" HeaderText="權限名稱" ReadOnly="True" />
                 </Columns>
             </asp:GridView>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
-                ConnectionString="<%$ ConnectionStrings:UserDB %>" 
-                SelectCommand="SELECT * FROM [UserList]" 
-                DeleteCommand="DELETE FROM [UserList] Where UserName = @UserName" 
-                UpdateCommand="UPDATE [UserList] SET RoleId = @RoleId, PassWord = @PassWord WHERE UserName = @UserName;">
-                <DeleteParameters>
-                    <asp:Parameter Name="UserName" />
-                </DeleteParameters>
-                <UpdateParameters>
-                    <asp:Parameter Name="RoleId" />
-                    <asp:Parameter Name="PassWord" />
-                    <asp:Parameter Name="UserName" />
-                </UpdateParameters>
-            </asp:SqlDataSource>
-            
-            
         </div>
     </main>
 </asp:Content>

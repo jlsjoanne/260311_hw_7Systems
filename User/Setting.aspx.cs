@@ -43,5 +43,10 @@ namespace _260311_hw_7Systems.User
             Session["RoleName"] = null;
             Response.Redirect("../Default.aspx");
         }
+
+        protected void ChangePwd_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("User_ChangePwd.aspx");
+        }
     }
 }

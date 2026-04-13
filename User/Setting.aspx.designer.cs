@@ -42,6 +42,15 @@ namespace _260311_hw_7Systems.User
         protected global::System.Web.UI.WebControls.LinkButton Management;
 
         /// <summary>
+        /// ChangePwd control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton ChangePwd;
+
+        /// <summary>
         /// LogOut control.
         /// </summary>
         /// <remarks>
