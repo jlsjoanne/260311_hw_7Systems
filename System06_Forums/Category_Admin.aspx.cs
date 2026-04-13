@@ -29,5 +29,10 @@ namespace _260311_hw_7Systems.System06_Forums
         {
             Response.Redirect("Category_Admin_Add.aspx");
         }
+
+        protected void GoBack_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("CategoryList.aspx");
+        }
     }
 }
