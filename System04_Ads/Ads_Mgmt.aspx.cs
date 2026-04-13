@@ -62,6 +62,7 @@ namespace _260311_hw_7Systems.System04_Ads
         {
             string categoryId = CategoryGrid.DataKeys[e.RowIndex].Value.ToString();
             DeleteCategory(categoryId);
+            e.Cancel = true;
             BindAdsGrid();
         }
 
@@ -77,10 +78,17 @@ namespace _260311_hw_7Systems.System04_Ads
             GridViewRow row = CategoryGrid.Rows[e.RowIndex];
             string cName = ((TextBox)row.Cells[1].Controls[0]).Text;
             string cOrder = ((TextBox)row.Cells[2].Controls[0]).Text;
+            bool isPublished = ((CheckBox)row.Cells[3].Controls[0]).Checked;
+            
+            if(cName == "")
+            {
+                Response.Write("<script>alert('類別名稱不得為空');</script>");
+                return;
+            }
             
             if (cOrder == "")
             {
-                UpdateCategory(categoryId, cName, null);
+                UpdateCategory(categoryId, cName, null, isPublished);
                 CategoryGrid.EditIndex = -1;
                 BindAdsGrid();
                 return;
@@ -92,7 +100,7 @@ namespace _260311_hw_7Systems.System04_Ads
                 return;
             }
 
-            UpdateCategory(categoryId,cName,orderNum);
+            UpdateCategory(categoryId,cName,orderNum, isPublished);
             CategoryGrid.EditIndex = -1;
             BindAdsGrid();
         }
@@ -137,11 +145,11 @@ namespace _260311_hw_7Systems.System04_Ads
             }
         }
 
-        private void UpdateCategory(string cId, string cName, int? cOrder)
+        private void UpdateCategory(string cId, string cName, int? cOrder, bool isPublished)
         {
             string connectionString = WebConfigurationManager.ConnectionStrings["AdsDB"].ConnectionString;
             string updateQuery = "UPDATE [Category] " +
-                "SET CategoryName = @CategoryName, CategoryOrder = @CategoryOrder "+
+                "SET CategoryName = @CategoryName, CategoryOrder = @CategoryOrder, IsPublished = @IsPublished "+
                 "WHERE CategoryId = @CategoryId";
 
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -151,6 +159,7 @@ namespace _260311_hw_7Systems.System04_Ads
                     command.Parameters.AddWithValue("@CategoryName", cName);
                     command.Parameters.AddWithValue("@CategoryOrder", cOrder);
                     command.Parameters.AddWithValue("@CategoryId", cId);
+                    command.Parameters.AddWithValue("@IsPublished", isPublished);
 
                     try
                     {
