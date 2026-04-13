@@ -56,6 +56,7 @@ namespace _260311_hw_7Systems.System07_ProductMgmt
             string imageId = ImgGrid.DataKeys[e.RowIndex].Value.ToString();
             string productId = Request.QueryString["ProductId"].ToString();
             DeleteFromId(imageId);
+            e.Cancel = true;
             BindImgData(productId);
 
         }

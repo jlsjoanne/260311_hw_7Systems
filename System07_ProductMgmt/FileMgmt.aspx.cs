@@ -87,6 +87,7 @@ namespace _260311_hw_7Systems.System07_ProductMgmt
             string fileId = FileGrid.DataKeys[e.RowIndex].Value.ToString();
             string productId = Request.QueryString["ProductId"].ToString();
             DeleteFromId(fileId);
+            e.Cancel = true;
             BindFileData(productId);
         }
 

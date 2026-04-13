@@ -124,6 +124,7 @@ namespace _260311_hw_7Systems.System02_PhotoAlbums
         {
             string photoId = PhotoGrid.DataKeys[e.RowIndex].Value.ToString();
             DeletePhoto(photoId);
+            e.Cancel = true;
             BindPhotoGrid();
         }
 

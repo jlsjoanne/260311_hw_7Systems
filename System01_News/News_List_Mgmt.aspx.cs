@@ -75,6 +75,7 @@ namespace _260311_hw_7Systems.System01_News
         {
             string newsId = NewsGrid.DataKeys[e.RowIndex].Value.ToString();
             DeleteNewsFromDB(newsId);
+            e.Cancel = true;
             BindNewsGrid();
         }
 

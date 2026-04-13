@@ -91,6 +91,7 @@ namespace _260311_hw_7Systems.System02_PhotoAlbums
         {
             string albumId = AlbumGrid.DataKeys[e.RowIndex].Value.ToString();
             DeleteAlbum(albumId);
+            e.Cancel = true;
             AlbumDataBind();
         }
 

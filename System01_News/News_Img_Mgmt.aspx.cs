@@ -92,6 +92,7 @@ namespace _260311_hw_7Systems.System01_News
         {
             string imageId = ImgGrid.DataKeys[e.RowIndex].Value.ToString();
             DeleteImg(imageId);
+            e.Cancel = true;
             BindImgGrid();
         }
 
