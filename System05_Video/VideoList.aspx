@@ -1,10 +1,16 @@
 ﻿<%@ Page Title="影片列表" Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="VideoList.aspx.cs" Inherits="_260311_hw_7Systems.System05_Video.VideoList" %>
 
+
+
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.5.0/lite-youtube.js"></script>
     <main aria-labelledby="title">
         <div>
+            <asp:Button ID="Mgmt" runat="server" Text="影片管理" Visible="False" OnClick="Mgmt_Click" />
+            &emsp; &emsp;
             <asp:Button ID="AddNew" runat="server" Text="新增影片" Visible="False" OnClick="AddNew_Click" />
         </div>
+        <br />
         <div>
             <asp:Repeater ID="CategoryRepeater" runat="server" OnItemDataBound="Category_ItemDataBound">
                 <ItemTemplate>
@@ -14,20 +20,15 @@
                         </asp:Label>
                     </b></p>
 
-                    <asp:Repeater ID="YtRepeater" runat="server" OnItemCommand="YTList_ItemCommand" >
+                    <asp:ListView ID="YtList" runat="server">
                         <ItemTemplate>
-                            <tr>
-                                <td>
-                                    <asp:ImageButton ID="VideoImgBtn" runat="server"
-                                        ImageUrl='<%# CombineYtImg(Eval("VideoId")) %>'
-                                        CommandName="ToYt"
-                                        CommandArgument='<%# CombineYtWatch(Eval("VideoId")) %>'
-                                        AlternateText='<%# Eval("VideoName") %>'
-                                        OnClientClick="document.forms[0].target='_blank';"/>
-                                </td>
-                            </tr>
+                            <div style="display: inline-block; width: 300px; height:169px">
+                                <lite-youtube videoid='<%# Eval("VideoId") %>' >
+                                    <a class="lite-youtube-fallback" href='<%# CombineYtWatch(Eval("VideoId")) %>' ></a>
+                                </lite-youtube>
+                            </div>
                         </ItemTemplate>
-                    </asp:Repeater>
+                    </asp:ListView>
                 </ItemTemplate>
             </asp:Repeater>
         </div>

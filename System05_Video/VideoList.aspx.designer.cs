@@ -15,6 +15,15 @@ namespace _260311_hw_7Systems.System05_Video
     {
 
         /// <summary>
+        /// Mgmt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Mgmt;
+
+        /// <summary>
         /// AddNew control.
         /// </summary>
         /// <remarks>

@@ -238,6 +238,9 @@
     <Content Include="System04_Ads\Ads_Mgmt_byCategory.aspx" />
     <Content Include="System05_Video\VideoList.aspx" />
     <Content Include="System05_Video\Video_Add.aspx" />
+    <Content Include="System05_Video\Video_Category_Add.aspx" />
+    <Content Include="System05_Video\Video_Mgmt.aspx" />
+    <Content Include="System05_Video\Video_Mgmt_ByCategory.aspx" />
     <Content Include="System06_Forums\Article.aspx" />
     <Content Include="System06_Forums\ArticleList.aspx" />
     <Content Include="System06_Forums\Article_Add.aspx" />
@@ -517,6 +520,27 @@
     </Compile>
     <Compile Include="System05_Video\Video_Add.aspx.designer.cs">
       <DependentUpon>Video_Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="System05_Video\Video_Category_Add.aspx.cs">
+      <DependentUpon>Video_Category_Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="System05_Video\Video_Category_Add.aspx.designer.cs">
+      <DependentUpon>Video_Category_Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="System05_Video\Video_Mgmt.aspx.cs">
+      <DependentUpon>Video_Mgmt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="System05_Video\Video_Mgmt.aspx.designer.cs">
+      <DependentUpon>Video_Mgmt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="System05_Video\Video_Mgmt_ByCategory.aspx.cs">
+      <DependentUpon>Video_Mgmt_ByCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="System05_Video\Video_Mgmt_ByCategory.aspx.designer.cs">
+      <DependentUpon>Video_Mgmt_ByCategory.aspx</DependentUpon>
     </Compile>
     <Compile Include="System06_Forums\Article.aspx.cs">
       <DependentUpon>Article.aspx</DependentUpon>
