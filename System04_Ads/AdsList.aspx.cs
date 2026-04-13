@@ -39,7 +39,7 @@ namespace _260311_hw_7Systems.System04_Ads
         protected void BindCategory()
         {
             string connectionString = WebConfigurationManager.ConnectionStrings["AdsDB"].ConnectionString;
-            string getCategoryQuery = "SELECT * FROM [Category] WHERE [CategoryOrder] IS NOT NULL ORDER BY [CategoryOrder] ASC";
+            string getCategoryQuery = "SELECT * FROM [Category] WHERE IsPublished = 1 ORDER BY [CategoryOrder] ASC";
 
             using(SqlConnection conn = new SqlConnection(connectionString))
             {

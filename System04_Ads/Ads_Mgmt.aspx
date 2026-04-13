@@ -19,6 +19,7 @@
                 <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
                 <asp:BoundField DataField="CategoryName" HeaderText="分類名稱" />
                 <asp:BoundField DataField="CategoryOrder" HeaderText="分類排序" />
+                <asp:CheckBoxField DataField="IsPublished" HeaderText="是否公開" />
                 <asp:HyperLinkField HeaderText="分類廣告管理" Text="Manage" DataNavigateUrlFields="CategoryId" DataNavigateUrlFormatString="Ads_Mgmt_byCategory.aspx?CategoryId={0}" />
             </Columns>
     </asp:GridView>
